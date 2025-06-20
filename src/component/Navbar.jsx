@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/hover-card";
 import { Button } from "@/components/ui/button";
 import Login from "./Login";
+import SignUp from "./SignUp";
 const Navbar = () => (
   <div className="mt-5">
     <div className=" w-full md:w-[1209px] md:h-[40px] ">
@@ -56,13 +57,8 @@ const Navbar = () => (
         </div>
         {/* sign login */}
         <div className="flex items-center gap-1 md:gap-5">
-            <Button className="bg-[#f22c4d] rounded-md text-white px-2 py-1 hover:bg-[#f22c4d]"><Login></Login></Button>
-          <Link
-            href="/signup"
-            className="rounded-md border-black border px-2 py-1"
-          >
-            Sign Up
-          </Link>
+            <Login ></Login>
+          <SignUp></SignUp>
           <div className="flex ">
             <p className="flex gap-2">
               {" "}
