@@ -45,7 +45,7 @@ const Navbar = () => (
               </HoverCardTrigger>
 
               {/* ✅ No group-hover here — HoverCard handles visibility */}
-              <HoverCardContent className="transition-all duration-300 ease-in-out w-full">
+              <HoverCardContent className="transition-all  ease-in-out w-full">
                 <div className="space-y-2">
                   <p>How it works</p>
                   <p>Contact us</p>
