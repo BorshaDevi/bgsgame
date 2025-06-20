@@ -2,7 +2,6 @@
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -22,16 +21,22 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import { FaFacebook } from "react-icons/fa6";
+import Link from "next/link"
+import { BsEye } from "react-icons/bs";
+import { BsEyeSlash } from "react-icons/bs";
+import { useState } from "react";
 
  
 const formSchema = z.object({
   username: z.string().min(2).max(50),
 })
 const Login=()=>{
+  const [open, setOpen] = useState(false);
    const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
+      password: "",
     },
   })
   function onSubmit(values) {
@@ -63,20 +68,40 @@ const Login=()=>{
         <FormField
           control={form.control}
           name="password"
+          
           render={({ field }) => (
             <FormItem>
               
               <FormControl>
-                <Input placeholder="Password" className=' border-black border-2'  {...field} />
+                <Input type={open ? 'text': 'password'} placeholder="Password" className=' border-black border-2'  {...field} />
               </FormControl>
+              <span className="absolute end-8  top-32 cursor-pointer" 
+                                      onClick={() => setOpen(!open)}
+                                      >
+              
+                                    {open ? (
+                                      <BsEyeSlash  />
+                                    ) : (
+                                      <BsEye  />
+                                    )}
+                                    </span>
               <FormMessage />
             </FormItem>
           )}
         />
         
-        <Button type="submit" className='w-full bg-[#05a7b3] rounded-full'>Login</Button>
+        <Button type="submit" className='w-full bg-[#05a7b3] hover:bg-[#05a7b3] rounded-full'>Login</Button>
       </form>
     </Form>
+    <div className="text-center mt-4">
+           <p className="underline text-[#0075ff]">Forget my password</p>
+           <p>Or</p>
+           <div className="flex items-center justify-center gap-2">
+            <FaFacebook className="text-[#0075ff]" />
+            <p className="underline text-[#0075ff]">Continue with Facebook</p>
+           </div>
+           <p className="mt-2">Not Registered account?<Link href='/signup' className="underline text-[#0075ff]">Create Free account</Link> </p>
+    </div>
     </DialogHeader>
   </DialogContent>
 </Dialog>
