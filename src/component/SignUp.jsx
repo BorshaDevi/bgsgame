@@ -18,12 +18,23 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input";
 import { FaFacebook } from "react-icons/fa6";
 import Link from "next/link";
 import { BsEye } from "react-icons/bs";
 import { BsEyeSlash } from "react-icons/bs";
 import { useState } from "react";
+
+
 
 const formSchema = z.object({
   username: z.string().min(2).max(50),
@@ -115,6 +126,8 @@ const Signup = () => {
                           {...field}
                         />
                       </FormControl>
+                       
+
                       <FormMessage />
                     </FormItem>
                   )}
