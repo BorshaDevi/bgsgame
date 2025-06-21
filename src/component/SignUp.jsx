@@ -25,6 +25,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { FaFacebook } from "react-icons/fa6";
 import Link from "next/link";
@@ -36,10 +38,14 @@ const formSchema = z.object({
   email: z.string().email({
     message: "Please enter a valid email address",
   }),
-  password:z.string().min(8, {
+  password: z.string().min(8, {
     message: "Password must be at least 8 characters long",
   }),
-  country:z.string()
+  country: z.string(),
+  terms:z.boolean({
+    message: "You must accept the terms and conditions",
+  }),
+  term:z.boolean().optional(),
 });
 const Signup = () => {
   const [open, setOpen] = useState(false);
@@ -48,7 +54,9 @@ const Signup = () => {
     defaultValues: {
       email: "",
       password: "",
-      country:'',
+      country: "",
+      terms:'',
+      term:'',
     },
   });
   function onSubmit(values) {
@@ -56,17 +64,17 @@ const Signup = () => {
   }
   return (
     <div>
-      <Dialog>
-        <DialogTrigger className="rounded-md border border-black px-2 py-1 ">
+      <Dialog className=''>
+        <DialogTrigger className="rounded-md border border-black px-2 text-black py-1  ">
           Sign Up
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle className="text-2xl text-center">
-              Login to your account
+            <DialogTitle className="text-2xl text-center text-black">
+             Create A Free Account
             </DialogTitle>
             {/* Login Form */}
-            <Form {...form}>
+            <Form {...form}  >
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
                 className="space-y-8"
@@ -79,7 +87,7 @@ const Signup = () => {
                       <FormControl>
                         <Input
                           placeholder="Enter your email"
-                          className=" border-black border-2"
+                          className=" border-black border-2 text-black bg-gray-300"
                           {...field}
                         />
                       </FormControl>
@@ -90,21 +98,20 @@ const Signup = () => {
                 <FormField
                   control={form.control}
                   name="password"
-                  
                   render={({ field }) => (
                     <FormItem className="relative">
                       <FormControl>
                         <Input
                           type={open ? "text" : "password"}
                           placeholder="Password"
-                          className=" border-black border-2"
+                          className=" border-black border-2 bg-gray-300 "
                           {...field}
                         />
                       </FormControl>
                       {/* Eye Icon */}
                       <span
-                        className="absolute end-8  top-1 cursor-pointer"
-                        onClick={() => setOpen(!open)}
+                        className="absolute end-8  top-1 cursor-pointer text-black"
+                        onClick={() => setOpen(!open) }
                       >
                         {open ? <BsEyeSlash /> : <BsEye />}
                       </span>
@@ -118,17 +125,17 @@ const Signup = () => {
                   name="country"
                   render={({ field }) => (
                     <FormItem>
-                      <Select 
-                      value={field.value}
-                       onValueChange={field.onChange}
+                      <Select
+                        value={field.value}
+                        onValueChange={field.onChange}
                       >
-                        <SelectTrigger className="w-full border-black border-2">
+                        <SelectTrigger className="w-full border-black border-2 bg-gray-300">
                           <SelectValue placeholder="Bangladesh" />
                         </SelectTrigger>
-                        <SelectContent  className="">
-                          <SelectItem value="light">Bangladesh</SelectItem>
-                          <SelectItem value="dark">India</SelectItem>
-                          <SelectItem value="system">China</SelectItem>
+                        <SelectContent className="">
+                          <SelectItem value="bangladesh">Bangladesh</SelectItem>
+                          <SelectItem value="india">India</SelectItem>
+                          <SelectItem value="China">China</SelectItem>
                         </SelectContent>
                       </Select>
 
@@ -136,7 +143,50 @@ const Signup = () => {
                     </FormItem>
                   )}
                 />
-                
+                <FormField
+                  control={form.control}
+                  name="terms"
+                  render={({ field }) => (
+                    <FormItem>
+                      <div className="flex items-center space-x-2">
+                        <Checkbox
+                          id="terms"
+                          checked={field.value}
+                          onCheckedChange={field.onChange}
+                        />
+                        <Label htmlFor="terms " className='text-black'>
+                          I am over 18 years of age and have read and accept
+                          the 
+                          <span className="text-blue-500">Terms Of Use</span>
+                           and the 
+                          <span className="text-blue-500">Privacy Notice</span>
+                          . (Required)
+                        </Label>
+                      </div>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="term"
+                  render={({ field }) => (
+                    <FormItem>
+                      <div className="flex items-center space-x-2">
+                        <Checkbox
+                          id="term"
+                          checked={field.value}
+                          onCheckedChange={field.onChange}
+                        />
+                        <Label htmlFor="term" className='text-black'>
+                          Yes, I want to receive exclusive deals and discounts!
+                        </Label>
+                      </div>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
                 <Button
                   type="submit"
                   className="w-full bg-[#05a7b3] hover:bg-[#05a7b3] rounded-full"
@@ -147,18 +197,18 @@ const Signup = () => {
             </Form>
             <div className="text-center mt-4">
               <p className="underline text-[#0075ff]">Forget my password</p>
-              <p>Or</p>
+              <p className="text-black">Or</p>
               <div className="flex items-center justify-center gap-2">
                 <FaFacebook className="text-[#0075ff]" />
                 <p className="underline text-[#0075ff]">
                   Continue with Facebook
                 </p>
               </div>
-              <p className="mt-2">
+              <p className="mt-2 text-black">
                 Already Registered?
                 <Link href="/login" className="underline text-[#0075ff]">
-                  Click here
-                </Link>{" "}
+                  Click here 
+                </Link>
                 to login
               </p>
             </div>

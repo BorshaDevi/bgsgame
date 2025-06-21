@@ -26,16 +26,18 @@ import Link from "next/link"
 import { BsEye } from "react-icons/bs";
 import { BsEyeSlash } from "react-icons/bs";
 import { useState } from "react";
+import Signup from "./SignUp"
 
  
 const formSchema = z.object({
   username: z.string().min(2).max(50),
 })
-const Login=()=>{
+const LoginForm=()=>{
   const [open, setOpen] = useState(false);
    const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      email: "",
       password: "",
     },
   })
@@ -48,7 +50,7 @@ const Login=()=>{
   <DialogTrigger  className="bg-[#f22c4d] rounded-md text-white px-2 py-1 hover:bg-[#f22c4d]">Login</DialogTrigger>
   <DialogContent>
     <DialogHeader>
-      <DialogTitle className='text-2xl text-center'>Login to your account</DialogTitle>
+      <DialogTitle className='text-2xl text-center text-black'>Login to your account</DialogTitle>
       {/* Login Form */}
       <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -59,7 +61,7 @@ const Login=()=>{
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Input placeholder="Enter your email" className=' border-black border-2' {...field} />
+                <Input placeholder="Enter your email" className=' border-black border-2 bg-slate-300' {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -73,9 +75,9 @@ const Login=()=>{
             <FormItem>
               
               <FormControl>
-                <Input type={open ? 'text': 'password'} placeholder="Password" className=' border-black border-2'  {...field} />
+                <Input type={open ? 'text': 'password'} placeholder="Password" className=' border-black border-2 bg-slate-300'  {...field} />
               </FormControl>
-              <span className="absolute end-8  top-32 cursor-pointer" 
+              <span className="absolute end-8  top-32 cursor-pointer text-black" 
                                       onClick={() => setOpen(!open)}
                                       >
               
@@ -95,12 +97,12 @@ const Login=()=>{
     </Form>
     <div className="text-center mt-4">
            <p className="underline text-[#0075ff]">Forget my password</p>
-           <p>Or</p>
+           <p className="text-black">Or</p>
            <div className="flex items-center justify-center gap-2">
             <FaFacebook className="text-[#0075ff]" />
             <p className="underline text-[#0075ff]">Continue with Facebook</p>
            </div>
-           <p className="mt-2">Not Registered account?<Link href='/signup' className="underline text-[#0075ff]">Create Free account</Link> </p>
+           <p className="mt-2 text-black">Not Registered account?</p>
     </div>
     </DialogHeader>
   </DialogContent>
@@ -108,4 +110,4 @@ const Login=()=>{
         </div>
     )
 }
-export default Login;
+export default LoginForm;

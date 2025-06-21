@@ -9,8 +9,10 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import { Button } from "@/components/ui/button";
-import Login from "./Login";
-import SignUp from "./SignUp";
+import Signup from "./SignUp";
+import LoginForm from "./LoginForm";
+
+
 const Navbar = () => (
   <div className="mt-5">
     <div className=" w-full md:w-[1209px] md:h-[40px] ">
@@ -57,11 +59,11 @@ const Navbar = () => (
         </div>
         {/* sign login */}
         <div className="flex items-center gap-1 md:gap-5">
-            <Login ></Login>
-          <SignUp></SignUp>
-          <div className="flex ">
-            <p className="flex gap-2">
-              {" "}
+            {/*  */}
+            <LoginForm></LoginForm>
+            <Signup></Signup>
+          <div className="flex text-black ">
+            <p className="flex gap-2 ">
               <TfiWorld className="mt-1"></TfiWorld>English
             </p>
           </div>
