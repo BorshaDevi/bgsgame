@@ -19,14 +19,12 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuLabel,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { FaFacebook } from "react-icons/fa6";
 import Link from "next/link";
@@ -34,18 +32,23 @@ import { BsEye } from "react-icons/bs";
 import { BsEyeSlash } from "react-icons/bs";
 import { useState } from "react";
 
-
-
 const formSchema = z.object({
-  username: z.string().min(2).max(50),
+  email: z.string().email({
+    message: "Please enter a valid email address",
+  }),
+  password:z.string().min(8, {
+    message: "Password must be at least 8 characters long",
+  }),
+  country:z.string()
 });
 const Signup = () => {
   const [open, setOpen] = useState(false);
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      email:'',
+      email: "",
       password: "",
+      country:'',
     },
   });
   function onSubmit(values) {
@@ -87,27 +90,23 @@ const Signup = () => {
                 <FormField
                   control={form.control}
                   name="password"
-                  className="relative"
+                  
                   render={({ field }) => (
-                    <FormItem>
+                    <FormItem className="relative">
                       <FormControl>
                         <Input
-                        type={open ? 'text': 'password'}
+                          type={open ? "text" : "password"}
                           placeholder="Password"
                           className=" border-black border-2"
                           {...field}
                         />
                       </FormControl>
                       {/* Eye Icon */}
-                      <span className="absolute end-8  top-32 cursor-pointer" 
+                      <span
+                        className="absolute end-8  top-1 cursor-pointer"
                         onClick={() => setOpen(!open)}
-                        >
-
-                      {open ? (
-                        <BsEyeSlash  />
-                      ) : (
-                        <BsEye  />
-                      )}
+                      >
+                        {open ? <BsEyeSlash /> : <BsEye />}
                       </span>
 
                       <FormMessage />
@@ -116,23 +115,28 @@ const Signup = () => {
                 />
                 <FormField
                   control={form.control}
-                  name=""
+                  name="country"
                   render={({ field }) => (
                     <FormItem>
-                      <FormControl>
-                        <Input
-                          placeholder="Password"
-                          className=" border-black border-2"
-                          {...field}
-                        />
-                      </FormControl>
-                       
+                      <Select 
+                      value={field.value}
+                       onValueChange={field.onChange}
+                      >
+                        <SelectTrigger className="w-full border-black border-2">
+                          <SelectValue placeholder="Bangladesh" />
+                        </SelectTrigger>
+                        <SelectContent  className="">
+                          <SelectItem value="light">Bangladesh</SelectItem>
+                          <SelectItem value="dark">India</SelectItem>
+                          <SelectItem value="system">China</SelectItem>
+                        </SelectContent>
+                      </Select>
 
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-
+                
                 <Button
                   type="submit"
                   className="w-full bg-[#05a7b3] hover:bg-[#05a7b3] rounded-full"
