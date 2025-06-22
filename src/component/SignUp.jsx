@@ -41,7 +41,9 @@ const formSchema = z.object({
   password: z.string().min(8, {
     message: "Password must be at least 8 characters long",
   }),
-  country: z.string(),
+  country: z.string({
+    message: 'You must select country.'
+  }),
   terms:z.boolean({
     message: "You must accept the terms and conditions",
   }),
