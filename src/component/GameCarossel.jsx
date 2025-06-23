@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/carousel"
 const GameCarossel=()=>{
     return(
-        <div className="mt-10 w-full ml-10">
+        <div className="mt-10 w-full  bg-red-600">
            <Carousel
       opts={{
         align: "start",

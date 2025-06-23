@@ -4,7 +4,7 @@ import aboutus from "../component/aboutanimation.json";
 const AboutAnimation =()=>{
  return (
     <>
-    <Lottie animationData={aboutus} loop={true} />
+    <Lottie animationData={aboutus} loop={true}  />
     </>
  )
 }
