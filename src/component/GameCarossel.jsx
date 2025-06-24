@@ -13,7 +13,7 @@ const GameCarossel=()=>{
       opts={{
         align: "start",
       }}
-      className="w-full max-w-sm text-black"
+      className="w-full max-w-sm text-black justify-center items-center mx-auto"
     >
       <CarouselContent>
         {Array.from({ length: 5 }).map((_, index) => (
