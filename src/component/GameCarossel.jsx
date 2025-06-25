@@ -1,3 +1,4 @@
+'use client'
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -8,25 +9,71 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 const GameCarossel=()=>{
+  const settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
     return(
-        <div className="mt-10 w-full  ">
-          <h1 className="text-center font-medium mb-10 text-2xl text-black">
-           Explore betqix games
-        </h1>
-         <div className="flex mx-auto justify-center items-center gap-5 p-5">
-          {data.map(da =>  <Card key={da.id} className='rounded-md' >
-  
-    <div className="relative">
-      <img src={da.image} alt='' className='h-[350px] w-[290px] rounded-md'></img>
-      <div className="absolute bottom-0 left-0 right-0">
-        <Button className='w-[238px] rounded-b-md text-white bg-red-700 hover:bg-red-700 '>Coming Soon...</Button>
-      </div>
+        <div className="mt-10 w-full px-4 ">
+      <h1 className="text-center font-medium mb-10 text-2xl text-black">
+        Explore betqix games
+      </h1>
+
+      <Slider {...settings}>
+        {data.map((da) => (
+          <div key={da.id} className="p-2">
+            <Card className="rounded-md overflow-hidden">
+              <div className="relative">
+                <img
+                  src={da.image}
+                  alt="game"
+                  className="h-[350px] w-full object-cover rounded-md"
+                />
+                <div className="absolute bottom-0 left-0 right-0">
+                  <Button className="w-full rounded-b-md text-white bg-red-700 hover:bg-red-700">
+                    Coming Soon...
+                  </Button>
+                </div>
+              </div>
+            </Card>
+          </div>
+        ))}
+      </Slider>
     </div>
-  
-</Card>)}
-         </div>
-        </div>
     )
 }
 export default GameCarossel;
