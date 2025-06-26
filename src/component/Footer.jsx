@@ -26,7 +26,7 @@ const Footer=()=>{
                     <p>Lottery Taxes</p>
                     <p>FAQ</p>
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-2 hidden">
                     <p className="underline underline-offset-8">Social Connected</p>
                     <div className="text-2xl flex gap-2 ">
                       <a href=''><CiFacebook /></a>

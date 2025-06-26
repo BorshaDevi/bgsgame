@@ -1,18 +1,34 @@
-'use client'
+"use client";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import { Card } from "@/components/ui/card";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-const GameCarossel=()=>{
+import { BiSolidLeftArrow } from "react-icons/bi";
+import { BiSolidRightArrow } from "react-icons/bi";
+const CustomeLeft = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      onClick={onClick}
+      className="arrow prev absolute right-10 top-1/2 -translate-y-1/2 z-10 cursor-pointer"
+    >
+      <BiSolidLeftArrow className="text-white bg-fuchsia-800 bg-opacity-80	p-1 text-xl"></BiSolidLeftArrow>
+    </div>
+  );
+};
+const CustomeRight = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      onClick={onClick}
+      className="arrow next absolute right-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer"
+    >
+      <BiSolidRightArrow className="text-white bg-fuchsia-800	p-1 bg-opacity-80	 text-xl"></BiSolidRightArrow>
+    </div>
+  );
+};
+const GameCarossel = () => {
   const settings = {
     dots: false,
     infinite: false,
@@ -20,6 +36,8 @@ const GameCarossel=()=>{
     slidesToShow: 4,
     slidesToScroll: 1,
     initialSlide: 0,
+    nextArrow: <CustomeRight />,
+    prevArrow: <CustomeLeft />,
     responsive: [
       {
         breakpoint: 1024,
@@ -27,28 +45,28 @@ const GameCarossel=()=>{
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true
-        }
+          dots: true,
+        },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2
-        }
+          initialSlide: 2,
+        },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
-    return(
-        <div className="mt-10 w-full px-4 ">
+  return (
+    <div className="mt-10 w-full px-4 ">
       <h1 className="text-center font-medium mb-10 text-2xl text-black">
         Explore betqix games
       </h1>
@@ -74,31 +92,34 @@ const GameCarossel=()=>{
         ))}
       </Slider>
     </div>
-    )
-}
+  );
+};
 export default GameCarossel;
 
-
-const data=[
+const data = [
   {
-     id:'1',
-     image:'https://res.cloudinary.com/dg1okcxsx/image/upload/v1750875148/53644adc1cf6bbe4c3a0d66b80efa286aef97cbc_zif1l2.png',
-},
+    id: "1",
+    image:
+      "https://res.cloudinary.com/dg1okcxsx/image/upload/v1750875148/53644adc1cf6bbe4c3a0d66b80efa286aef97cbc_zif1l2.png",
+  },
   {
-     id:'2',
-     image:'https://res.cloudinary.com/dg1okcxsx/image/upload/v1750876200/0c127471b8d6f365a9f047fd0d3988deae9ec8f9_1_cfgjaz.jpg',
-},
+    id: "2",
+    image:
+      "https://res.cloudinary.com/dg1okcxsx/image/upload/v1750876200/0c127471b8d6f365a9f047fd0d3988deae9ec8f9_1_cfgjaz.jpg",
+  },
   {
-     id:'3',
-     image:'https://res.cloudinary.com/dg1okcxsx/image/upload/v1750875073/4c1fcc18c89549743fc9a114f66ca40a5bfcdfe5_tyruch.png',
-},
+    id: "3",
+    image:
+      "https://res.cloudinary.com/dg1okcxsx/image/upload/v1750875073/4c1fcc18c89549743fc9a114f66ca40a5bfcdfe5_tyruch.png",
+  },
   {
-     id:'4',
-     image:'https://res.cloudinary.com/dg1okcxsx/image/upload/v1750875103/52afda72fe2a371b1abfb73bbf67cb9cbc140767_yjpen9.png',
-},
+    id: "4",
+    image:
+      "https://res.cloudinary.com/dg1okcxsx/image/upload/v1750875103/52afda72fe2a371b1abfb73bbf67cb9cbc140767_yjpen9.png",
+  },
   {
-     id:'5',
-     image:'https://res.cloudinary.com/dg1okcxsx/image/upload/v1750875364/f32f6efd9fdf7ba4459c09b0f1618c561cf13d92_osnlto.png',
-},
- 
-]
+    id: "5",
+    image:
+      "https://res.cloudinary.com/dg1okcxsx/image/upload/v1750875364/f32f6efd9fdf7ba4459c09b0f1618c561cf13d92_osnlto.png",
+  },
+];
