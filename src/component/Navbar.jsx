@@ -11,6 +11,7 @@ import {
 import Signup from "./SignUp";
 import LoginForm from "./LoginForm";
 import { useState } from "react";
+import Link from "next/link";
 
 
 const Navbar = () => {
@@ -53,7 +54,7 @@ const Navbar = () => {
               <HoverCardContent className="transition-all  ease-in-out w-full">
                 <div className="space-y-2">
                   <p>How it works</p>
-                  <p>Contact us</p>
+                  <Link href='/contact'>Contact us</Link>
                   <p>Payment policy</p>
                 </div>
               </HoverCardContent>
