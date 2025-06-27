@@ -27,7 +27,7 @@ import { useState } from "react";
 const formSchema = z.object({
   username: z.string().min(2).max(50),
 });
-const LoginForm = ({ open, setOpen, switchToSignup }) => {
+const LoginForm = ({ openMd, setOpenMd, switchToSignup }) => {
   const [open, setOpen] = useState(false);
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -41,7 +41,7 @@ const LoginForm = ({ open, setOpen, switchToSignup }) => {
   }
   return (
     <div>
-      <Dialog>
+      <Dialog open={openMd} onOpenChange={setOpenMd}>
         <DialogContent>
           <DialogHeader>
             <DialogTitle className="text-2xl text-center text-black">
@@ -111,10 +111,10 @@ const LoginForm = ({ open, setOpen, switchToSignup }) => {
                 </p>
               </div>
               <p className="mt-2 text-black">Not Registered account?<span onClick={() => {
-              setOpen(false)
+              setOpenMd(false)
               switchToSignup()
             }}
-            className="text-blue-500 underline">Create free account</span></p>
+            className="text-blue-500 underline cursor-pointer">Create free account</span></p>
             </div>
           </DialogHeader>
         </DialogContent>

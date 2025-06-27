@@ -48,7 +48,7 @@ const formSchema = z.object({
   }),
   term:z.boolean().optional(),
 });
-const Signup = ({ open, setOpen, switchToLogin }) => {
+const Signup = ({ openMd, setOpenMd, switchToLogin }) => {
   const [open, setOpen] = useState(false);
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -65,7 +65,7 @@ const Signup = ({ open, setOpen, switchToLogin }) => {
   }
   return (
     <div>
-      <Dialog open={open} onOpenChange={setOpen}>
+      <Dialog open={openMd} onOpenChange={setOpenMd}>
        
         <DialogContent>
           <DialogHeader>
@@ -206,10 +206,10 @@ const Signup = ({ open, setOpen, switchToLogin }) => {
               <p className="mt-2 text-black">
                 Already Registered?
                 <span onClick={() => {
-              setOpen(false)
+              setOpenMd(false)
               switchToLogin()
             }}
-            className="text-blue-500 underline">Click here </span>
+            className="text-blue-500 underline cursor-pointer">Click here </span>
                 to login
               </p>
             </div>

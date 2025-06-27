@@ -67,16 +67,16 @@ const Navbar = () => {
       <button onClick={() => setShowSignup(true)} className="rounded-md border border-black px-2 text-black py-1">Sign Up</button>
 
             <LoginForm
-             open={showLogin}
-        setOpen={setShowLogin}
+             openMd={showLogin}
+        setOpenMd={setShowLogin}
         switchToSignup={() => {
           setShowLogin(false)
           setShowSignup(true)
         }}
             ></LoginForm>
             <Signup
-            open={showSignup}
-        setOpen={setShowSignup}
+            openMd={showSignup}
+        setOpenMd={setShowSignup}
         switchToLogin={() => {
           setShowSignup(false)
           setShowLogin(true)
