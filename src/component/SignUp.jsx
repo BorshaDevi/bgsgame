@@ -29,7 +29,6 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { FaFacebook } from "react-icons/fa6";
-import Link from "next/link";
 import { BsEye } from "react-icons/bs";
 import { BsEyeSlash } from "react-icons/bs";
 import { useState } from "react";
@@ -49,7 +48,7 @@ const formSchema = z.object({
   }),
   term:z.boolean().optional(),
 });
-const Signup = () => {
+const Signup = ({ open, setOpen, switchToLogin }) => {
   const [open, setOpen] = useState(false);
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -66,10 +65,8 @@ const Signup = () => {
   }
   return (
     <div>
-      <Dialog className=''>
-        <DialogTrigger className="rounded-md border border-black px-2 text-black py-1  ">
-          Sign Up
-        </DialogTrigger>
+      <Dialog open={open} onOpenChange={setOpen}>
+       
         <DialogContent>
           <DialogHeader>
             <DialogTitle className="text-2xl text-center text-black">
@@ -208,9 +205,11 @@ const Signup = () => {
               </div>
               <p className="mt-2 text-black">
                 Already Registered?
-                <Link href="/login" className="underline text-[#0075ff]">
-                  Click here 
-                </Link>
+                <span onClick={() => {
+              setOpen(false)
+              switchToLogin()
+            }}
+            className="text-blue-500 underline">Click here </span>
                 to login
               </p>
             </div>

@@ -1,113 +1,125 @@
-'use client'
+"use client";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
+} from "@/components/ui/dialog";
 
-import { z } from "zod"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { Button } from "@/components/ui/button"
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
-} from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 import { FaFacebook } from "react-icons/fa6";
-import Link from "next/link"
 import { BsEye } from "react-icons/bs";
 import { BsEyeSlash } from "react-icons/bs";
 import { useState } from "react";
-import Signup from "./SignUp"
 
- 
 const formSchema = z.object({
   username: z.string().min(2).max(50),
-})
-const LoginForm=()=>{
+});
+const LoginForm = ({ open, setOpen, switchToSignup }) => {
   const [open, setOpen] = useState(false);
-   const form = useForm({
+  const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
       email: "",
       password: "",
     },
-  })
+  });
   function onSubmit(values) {
-    console.log(values)
+    console.log(values);
   }
-    return(
-        <div>
-             <Dialog>
-  <DialogTrigger  className="bg-[#f22c4d] rounded-md text-white px-2 py-1 hover:bg-[#f22c4d]">Login</DialogTrigger>
-  <DialogContent>
-    <DialogHeader>
-      <DialogTitle className='text-2xl text-center text-black'>Login to your account</DialogTitle>
-      {/* Login Form */}
-      <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <FormField
-          control={form.control}
-          name="email"
-          
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Input placeholder="Enter your email" className=' border-black border-2 bg-slate-300' {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="password"
-          
-          render={({ field }) => (
-            <FormItem>
-              
-              <FormControl>
-                <Input type={open ? 'text': 'password'} placeholder="Password" className=' border-black border-2 bg-slate-300'  {...field} />
-              </FormControl>
-              <span className="absolute end-8  top-32 cursor-pointer text-black" 
-                                      onClick={() => setOpen(!open)}
-                                      >
-              
-                                    {open ? (
-                                      <BsEyeSlash  />
-                                    ) : (
-                                      <BsEye  />
-                                    )}
-                                    </span>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        
-        <Button type="submit" className='w-full bg-[#05a7b3] hover:bg-[#05a7b3] rounded-full'>Login</Button>
-      </form>
-    </Form>
-    <div className="text-center mt-4">
-           <p className="underline text-[#0075ff]">Forget my password</p>
-           <p className="text-black">Or</p>
-           <div className="flex items-center justify-center gap-2">
-            <FaFacebook className="text-[#0075ff]" />
-            <p className="underline text-[#0075ff]">Continue with Facebook</p>
-           </div>
-           <p className="mt-2 text-black">Not Registered account?</p>
+  return (
+    <div>
+      <Dialog>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle className="text-2xl text-center text-black">
+              Login to your account
+            </DialogTitle>
+            {/* Login Form */}
+            <Form {...form}>
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="space-y-8"
+              >
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Input
+                          placeholder="Enter your email"
+                          className=" border-black border-2 bg-slate-300"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="password"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Input
+                          type={open ? "text" : "password"}
+                          placeholder="Password"
+                          className=" border-black border-2 bg-slate-300"
+                          {...field}
+                        />
+                      </FormControl>
+                      <span
+                        className="absolute end-8  top-32 cursor-pointer text-black"
+                        onClick={() => setOpen(!open)}
+                      >
+                        {open ? <BsEyeSlash /> : <BsEye />}
+                      </span>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <Button
+                  type="submit"
+                  className="w-full bg-[#05a7b3] hover:bg-[#05a7b3] rounded-full"
+                >
+                  Login
+                </Button>
+              </form>
+            </Form>
+            <div className="text-center mt-4">
+              <p className="underline text-[#0075ff]">Forget my password</p>
+              <p className="text-black">Or</p>
+              <div className="flex items-center justify-center gap-2">
+                <FaFacebook className="text-[#0075ff]" />
+                <p className="underline text-[#0075ff]">
+                  Continue with Facebook
+                </p>
+              </div>
+              <p className="mt-2 text-black">Not Registered account?<span onClick={() => {
+              setOpen(false)
+              switchToSignup()
+            }}
+            className="text-blue-500 underline">Create free account</span></p>
+            </div>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
     </div>
-    </DialogHeader>
-  </DialogContent>
-</Dialog>
-        </div>
-    )
-}
+  );
+};
 export default LoginForm;

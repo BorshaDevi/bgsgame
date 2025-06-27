@@ -1,4 +1,4 @@
-import Link from "next/link";
+'use client'
 import { GoChevronDown } from "react-icons/go";
 import { TfiWorld } from "react-icons/tfi";
 import { GoChevronUp } from "react-icons/go";
@@ -10,10 +10,14 @@ import {
 } from "@/components/ui/hover-card";
 import Signup from "./SignUp";
 import LoginForm from "./LoginForm";
+import { useState } from "react";
 
 
-const Navbar = () => (
-  <div className="mt-5">
+const Navbar = () => {
+  const [showLogin, setShowLogin] = useState(false)
+  const [showSignup, setShowSignup] = useState(false)
+  return(
+    <div className="mt-5">
     <div className=" w-full md:w-[1209px] md:h-[40px] ">
       <div className=" bg-[#f1f1f1] mx-auto flex items-center justify-around text-wrap ">
         <div className="flex gap-2 md:gap-5">
@@ -59,8 +63,25 @@ const Navbar = () => (
         {/* sign login */}
         <div className="flex items-center gap-1 md:gap-5">
             {/*  */}
-            <LoginForm></LoginForm>
-            <Signup></Signup>
+            <button onClick={() => setShowLogin(true)} className="bg-[#f22c4d] rounded-md text-white px-2 py-1 hover:bg-[#f22c4d]">Login</button>
+      <button onClick={() => setShowSignup(true)} className="rounded-md border border-black px-2 text-black py-1">Sign Up</button>
+
+            <LoginForm
+             open={showLogin}
+        setOpen={setShowLogin}
+        switchToSignup={() => {
+          setShowLogin(false)
+          setShowSignup(true)
+        }}
+            ></LoginForm>
+            <Signup
+            open={showSignup}
+        setOpen={setShowSignup}
+        switchToLogin={() => {
+          setShowSignup(false)
+          setShowLogin(true)
+        }}
+            ></Signup>
           <div className="flex text-black ">
             <p className="flex gap-2 ">
               <TfiWorld className="mt-1"></TfiWorld>English
@@ -70,5 +91,6 @@ const Navbar = () => (
       </div>
     </div>
   </div>
-);
+  )
+}
 export default Navbar;
