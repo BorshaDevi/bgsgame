@@ -33,9 +33,9 @@ const Navbar = () => {
               <span className="text-[#0688ba] ">qix</span>
             </h1>
           </div>
-          <div className="flex md:gap-5 gap-1 mt-1 text-black">
+          <div className="flex md:gap-5 gap-1 mt-1 text-black cursor-pointer">
             <h1 className="">Game</h1>
-            <h1 className="">Result</h1>
+            <Link href='/ourwinner'>Our Winner</Link>
             {/* hover card */}
             <HoverCard>
               <HoverCardTrigger asChild>
@@ -52,10 +52,10 @@ const Navbar = () => {
 
               {/* ✅ No group-hover here — HoverCard handles visibility */}
               <HoverCardContent className="transition-all  ease-in-out w-full">
-                <div className="space-y-2">
+                <div className="space-y-2 flex flex-col">
                   <p>How it works</p>
-                  <Link href='/contact'>Contact us</Link>
-                  <p>Payment policy</p>
+                  <Link href='/contact' className="">Contact us</Link>
+                  <Link href=''>Payment policy</Link>
                 </div>
               </HoverCardContent>
             </HoverCard>

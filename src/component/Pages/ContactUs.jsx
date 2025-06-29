@@ -1,12 +1,17 @@
-
+'use client'
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 import { BsChatDots } from "react-icons/bs";
 import { MdOutlineEmail } from "react-icons/md";
 const ContactUs=()=>{
+    const [loading ,setLoading]=useState()
+    if(loading){
+       return <p className="text-red-700">Loading....</p>
+    }
     return(
-        <>
-           <div className="flex justify-center items-center">
-            <div className="">
+        <div className="w-full min-h-screen">
+           <div className="flex  ">
+            <div className=" mt-16 mx-auto">
                 {/* contact */}
                 <div>
                     <h6 className="text-black text-xl font-extralight">Contact Us</h6>
@@ -14,7 +19,6 @@ const ContactUs=()=>{
                        <BsChatDots className="text-blue-500 text-xl"/>
                        <div className="mt-5">
                         <p className="text-black">Live Chat Our friendly and professional Customer Service team offers live chat assistance <br></br> in several languages</p>
-                        <Button className='rounded-full bg-red-600 text-white'>Live Chat</Button>
                        </div>
                      </div>
                 </div>
@@ -31,22 +35,22 @@ const ContactUs=()=>{
                    <p className="text-black mt-5">Email Address: example@.com</p>
                    <div>
                     <form>
-                        <div className="w-[666px] h-[48px] flex justify-between ">
+                        <div className="w-full h-full flex justify-between ">
                             <label className="text-black mt-5">Topic</label>
-                        <input type="text" placeholder='Enter your topic'className="border-gray-400 border p-1 mt-5 " />
+                        <input type="text" placeholder='Enter your topic'className="border-gray-400 border w-1/2 h-full p-2 mt-5 " />
                         </div>
                         <br></br>
-                        <textarea placeholder='Write Your Message'className="border-gray-400 border w-[666px] h-[262px] p-4 mt-5" ></textarea>
+                        <textarea placeholder='Write Your Message'className="border-gray-400 border md:w-[666px] md:h-[262px] w-full h-[200px] p-4 mt-5" ></textarea>
                         <br></br>
-                        <input type="submit" value='send'  className="uppercase rounded-l-full rounded-r-full text-blue-500 border-blue-600 border p-1 flex  justify-end" />
-                    </form>
+                        <input type='submit' value='Send' className="text-blue-600 border border-blue-700 rounded-r-md rounded-l-md bg-white text-xl mb-5  py-1 px-3"/>
+                        </form>
                    </div>
 
                 </div>
             </div>
 
            </div>
-        </>
+        </div>
     )
 }
 export default ContactUs;
