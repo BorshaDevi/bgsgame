@@ -20,24 +20,24 @@ const Account = () => {
             </h6>
             <Card className="w-full max-w-sm ">
              <div className="p-5 text-center">
-                <div className="flex">
+                <div className="flex  space-x-3">
                 <Avatar>
                     <AvatarImage src="" />
                     <AvatarFallback>CN</AvatarFallback>
                   </Avatar>
-                  <div>
-                    <h6>Prince</h6>
+                  <div className="text-start space-y-1 font-semibold mt-3">
+                    <h6>Prince Sorkar</h6>
                     <p>$0.00</p>
                   </div>
              </div>
-              <div className="grid grid-cols-2 ">
-                    <div className="text-start">
+              <div className="grid grid-cols-2 mt-8 gap-10 font-extralight">
+                    <div className="text-start space-y-3 text-black">
                       <p>Total Time Wins</p>
                     <p>Real Money</p>
                     <p>Bonus Money</p>
                     <p>Pending Withdrawals</p>
                     </div>
-                    <div>
+                    <div className=" space-y-3 text-black">
                       <p>$0.00</p>
                     <p>$0.00</p>
                     <p>$0.00</p>
