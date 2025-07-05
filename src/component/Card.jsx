@@ -7,7 +7,7 @@ import SupportAnimation from "./SupportAnimation";
 const Card = () => {
   return (
     <div className="mt-10 ">
-      <div>
+      <div className="max-w-[1200px] mx-auto px-4">
         <h1 className="text-center font-medium mb-10 text-2xl text-black">
           Get to know betqix
         </h1>

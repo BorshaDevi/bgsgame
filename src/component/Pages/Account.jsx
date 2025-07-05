@@ -30,24 +30,21 @@ const Account = () => {
                     <p>$0.00</p>
                   </div>
              </div>
-              <CardContent>
-                   <div className="flex justify-around">
-                    <p>Total Time Wins</p>
-                    <p>$0.00</p>
-                   </div>
-                   <div className="flex justify-around">
+              <div className="grid grid-cols-2 ">
+                    <div className="text-start">
+                      <p>Total Time Wins</p>
                     <p>Real Money</p>
-                    <p>$0.00</p>
-                   </div>
-                   <div className="flex justify-around">
                     <p>Bonus Money</p>
-                    <p>$0.00</p>
-                   </div>
-                   <div className="flex justify-around">
                     <p>Pending Withdrawals</p>
+                    </div>
+                    <div>
+                      <p>$0.00</p>
                     <p>$0.00</p>
+                    <p>$0.00</p>
+                    <p>$0.00</p>
+                    </div>
                    </div>
-              </CardContent>
+             </div>
               <CardFooter className="flex-col gap-2">
                 <Button
                   type="submit"
@@ -62,7 +59,6 @@ const Account = () => {
                   Withdraw
                 </Button>
               </CardFooter>
-             </div>
             </Card>
           </div>
           <div>data</div>
