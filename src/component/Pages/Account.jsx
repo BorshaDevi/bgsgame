@@ -2,12 +2,13 @@
 import { Button } from "@/components/ui/button";
 import {
   Card,
-  CardContent,
-  CardDescription,
   CardFooter,
-  CardHeader,
 } from "@/components/ui/card";
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import TabsCom from "../Tabs";
+
+
 const Account = () => {
   return (
     <div className="w-full min-h-screen mt-10">
@@ -63,9 +64,7 @@ const Account = () => {
           </div>
           {/* Data */}
           <div>
-            <Card className="w-full max-w-sm ">
-              
-            </Card>
+           <TabsCom></TabsCom>
           </div>
         </div>
       </div>
