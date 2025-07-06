@@ -86,7 +86,7 @@ const Signup = ({ openMd, setOpenMd, switchToLogin }) => {
                       <FormControl>
                         <Input
                           placeholder="Enter your email"
-                          className=" border-black border-2 text-black bg-gray-300"
+                          className=" border-black border-1 text-black bg-gray-100"
                           {...field}
                         />
                       </FormControl>
@@ -103,7 +103,7 @@ const Signup = ({ openMd, setOpenMd, switchToLogin }) => {
                         <Input
                           type={open ? "text" : "password"}
                           placeholder="Password"
-                          className=" border-black border-2 bg-gray-300 "
+                          className=" border-black border-1 text-black bg-gray-100 "
                           {...field}
                         />
                       </FormControl>
@@ -128,10 +128,10 @@ const Signup = ({ openMd, setOpenMd, switchToLogin }) => {
                         value={field.value}
                         onValueChange={field.onChange}
                       >
-                        <SelectTrigger className="w-full border-black border-2 bg-gray-300">
+                        <SelectTrigger className="w-full border-black border-1 text-black bg-gray-100">
                           <SelectValue placeholder="Bangladesh" />
                         </SelectTrigger>
-                        <SelectContent className="">
+                        <SelectContent className="border-1 border-black">
                           <SelectItem value="bangladesh">Bangladesh</SelectItem>
                           <SelectItem value="india">India</SelectItem>
                           <SelectItem value="China">China</SelectItem>
@@ -153,7 +153,7 @@ const Signup = ({ openMd, setOpenMd, switchToLogin }) => {
                           checked={field.value}
                           onCheckedChange={field.onChange}
                         />
-                        <Label htmlFor="terms " className='text-black'>
+                        <Label htmlFor="terms " className='text-black '>
                           I am over 18 years of age and have read and accept
                           the 
                           <span className="text-blue-500">Terms Of Use</span>
@@ -196,13 +196,13 @@ const Signup = ({ openMd, setOpenMd, switchToLogin }) => {
             </Form>
             <div className="text-center mt-4">
               <p className="underline text-[#0075ff]">Forget my password</p>
-              <p className="text-black">Or</p>
-              <div className="flex items-center justify-center gap-2">
+              {/* <p className="text-black">Or</p> */}
+              {/* <div className="flex items-center justify-center gap-2">
                 <FaFacebook className="text-[#0075ff]" />
                 <p className="underline text-[#0075ff]">
                   Continue with Facebook
                 </p>
-              </div>
+              </div> */}
               <p className="mt-2 text-black">
                 Already Registered?
                 <span onClick={() => {

@@ -61,7 +61,7 @@ const LoginForm = ({ openMd, setOpenMd, switchToSignup }) => {
                       <FormControl>
                         <Input
                           placeholder="Enter your email"
-                          className=" border-black border-2 bg-slate-300"
+                          className=" border-black border-1 text-black bg-slate-100"
                           {...field}
                         />
                       </FormControl>
@@ -78,7 +78,7 @@ const LoginForm = ({ openMd, setOpenMd, switchToSignup }) => {
                         <Input
                           type={open ? "text" : "password"}
                           placeholder="Password"
-                          className=" border-black border-2 bg-slate-300"
+                          className=" border-black border-1  text-black bg-slate-100"
                           {...field}
                         />
                       </FormControl>
@@ -102,14 +102,14 @@ const LoginForm = ({ openMd, setOpenMd, switchToSignup }) => {
               </form>
             </Form>
             <div className="text-center mt-4">
-              <p className="underline text-[#0075ff]">Forget my password</p>
-              <p className="text-black">Or</p>
-              <div className="flex items-center justify-center gap-2">
+              <p className="underline text-[#0075ff]">Forget Your password</p>
+              {/* <p className="text-black">Or</p> */}
+              {/* <div className="flex items-center justify-center gap-2">
                 <FaFacebook className="text-[#0075ff]" />
                 <p className="underline text-[#0075ff]">
                   Continue with Facebook
                 </p>
-              </div>
+              </div> */}
               <p className="mt-2 text-black">Not Registered account?<span onClick={() => {
               setOpenMd(false)
               switchToSignup()
