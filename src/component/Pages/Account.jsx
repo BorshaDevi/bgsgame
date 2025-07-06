@@ -61,7 +61,12 @@ const Account = () => {
               </CardFooter>
             </Card>
           </div>
-          <div>data</div>
+          {/* Data */}
+          <div>
+            <Card className="w-full max-w-sm ">
+              
+            </Card>
+          </div>
         </div>
       </div>
     </div>

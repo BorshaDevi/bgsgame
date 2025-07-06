@@ -1,4 +1,4 @@
-import Bannar from "@/component/Banner";
+
 import Card from "@/component/Card";
 import GameCarossel from "@/component/GameCarossel";
 import ImageBannar from "@/component/ImageBannar";
