@@ -2,6 +2,7 @@ import { CiFacebook } from "react-icons/ci";
 import { ImYoutube } from "react-icons/im";
 import { FaXTwitter } from "react-icons/fa6";
 import { BsInstagram } from "react-icons/bs";
+import Link from "next/link";
 const Footer=()=>{
     return (
         <div >
@@ -10,23 +11,24 @@ const Footer=()=>{
                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-white ">
                 <div className="space-y-2">
                     <p className="underline underline-offset-8">Polices</p>
-                    <p>Terms of Use</p>
-                    <p>Privacy Policy</p>
-                    <p>Cookie Policy</p>
+                    <Link href=''>Terms of Use</Link><br></br>
+                    <Link href='/ppolicy'>Privacy Policy</Link><br></br>
+                    <Link href=''>Cookie Policy</Link><br></br>
                 </div>
                 <div className="space-y-2">
                     <p className="underline underline-offset-8">About Us</p>
-                    <p>About Us</p>
-                    <p>Contact Us</p>
-                    <p>Our Mission</p>
+                    <Link href=''>About Us</Link>
+                    <br></br>
+                  <Link href='/contact'>Contact Us</Link><br></br>
+                    <Link href=''>Our Mission</Link><br></br>
                 </div>
                 <div className="space-y-2">
                     <p className="underline underline-offset-8">Information</p>
-                    <p>Payment Method</p>
-                    <p>Lottery Taxes</p>
-                    <p>FAQ</p>
+                    <Link href=''>Payment Method</Link><br></br>
+                    <Link href=''>Lottery Taxes</Link><br></br>
+                    <Link href=''>FAQ</Link><br></br>
                 </div>
-                <div className="space-y-2 hidden">
+                {/* <div className="space-y-2 ">
                     <p className="underline underline-offset-8">Social Connected</p>
                     <div className="text-2xl flex gap-2 ">
                       <a href=''><CiFacebook /></a>
@@ -34,7 +36,7 @@ const Footer=()=>{
                       <a href=""><FaXTwitter /></a>
                       <a href=""><BsInstagram /></a>
                     </div>
-                </div>
+                </div> */}
                </div>
                <hr className="mt-8 mb-5 w-full"></hr>
                 <div className="text-center text-white">
