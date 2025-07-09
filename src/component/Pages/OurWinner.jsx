@@ -26,7 +26,7 @@ const OurWinner = () => {
               <Tilt key={da.id} tiltEnable={false} transitionSpeed={2500} scale={scale} className="w-full">
                 <Card data-aos="flip-up" data-aos-offset="500"
     data-aos-delay="100"
-    data-aos-duration="3000"
+    data-aos-duration="2000"
     data-aos-easing="ease-in-back"
     data-aos-mirror="true"
     data-aos-once="false"
