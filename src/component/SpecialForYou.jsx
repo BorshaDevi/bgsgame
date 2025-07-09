@@ -1,9 +1,15 @@
+'use client'
 import { Button } from "@/components/ui/button";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 const SpecialForYou = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
   return (
     <>
-     <div className="mt-10 w-full">
+     <div className="mt-10 w-full" >
   <div className="w-full max-w-[1204px] mx-auto bg-cyan-200 bg-opacity-40 rounded-md px-4 md:px-8">
     <h1 className="text-center font-medium text-2xl text-black mt-6">
       Special For You
@@ -11,11 +17,12 @@ const SpecialForYou = () => {
     <div className="p-3">
       {/* first div */}
       <div className="flex md:flex-row flex-col justify-center items-center gap-10 mb-5">
-        <div>
+        <div data-aos="fade-down-right">
           <img
             src="https://res.cloudinary.com/dg1okcxsx/image/upload/v1750924704/37e93d8015c5abba4d6b207bb212f6a310dcc0a2-removebg-preview_dabywh.png"
             alt=""
             className="md:w-[413px] md:h-[350px] rounded-md"
+            
           />
         </div>
         <div className="space-y-3 text-left">
@@ -48,7 +55,7 @@ const SpecialForYou = () => {
           </p>
           <Button className="bg-red-700 hover:bg-red-700">View More</Button>
         </div>
-        <div>
+        <div data-aos="fade-down-left">
           <img
             src="https://res.cloudinary.com/dg1okcxsx/image/upload/v1750922725/1931a0b7b783fb007422645b1ccde00e1e3e1093_be14xc.png"
             alt=""

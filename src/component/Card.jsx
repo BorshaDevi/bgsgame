@@ -12,32 +12,32 @@ const Card = () => {
           Get to know betqix
         </h1>
         <div className="grid md:grid-cols-4 grid-cols-2 gap-10">
-          <div className="card1">
-            <div className="bg-cyan-200 bg-opacity-40 rounded-md shadow w-full md:h-64 h-52 ">
+          <div className="card1" >
+            <div className="bg-cyan-200 bg-opacity-40 rounded-md shadow w-full md:h-64 h-52 " >
               <AboutAnimation></AboutAnimation>
             </div>
             <h1 className="text-black font-semibold underline-offset-8 underline text-center mt-2">
               About Us
             </h1>
           </div>
-          <div className="card2">
-            <div className="bg-cyan-200 bg-opacity-40 rounded-md shadow w-full md:h-64 h-52">
+          <div className="card2" >
+            <div className="bg-cyan-200 bg-opacity-40 rounded-md shadow w-full md:h-64 h-52 " >
               <SupportAnimation></SupportAnimation>
             </div>
             <h1 className="text-black font-semibold underline-offset-8 underline text-center mt-2">
               Support
             </h1>
           </div>
-          <div className="card3">
-            <div className="bg-cyan-200 bg-opacity-40 rounded-md shadow w-full md:h-64 h-52">
+          <div className="card3" >
+            <div className="bg-cyan-200 bg-opacity-40 rounded-md shadow w-full md:h-64 h-52" >
               <CompanyDetails></CompanyDetails>
             </div>
             <h1 className="text-black font-semibold underline-offset-8 underline text-center mt-2">
               Company Details
             </h1>
           </div>
-          <div className="card4">
-            <div className="bg-cyan-200  bg-opacity-40 rounded-md shadow w-full md:h-64 h-52">
+          <div className="card4" >
+            <div className="bg-cyan-200  bg-opacity-40 rounded-md shadow w-full md:h-64 h-52" >
               <FAQAnimation></FAQAnimation>
             </div>
             <h1 className="text-black font-semibold underline-offset-8 underline text-center mt-2">
