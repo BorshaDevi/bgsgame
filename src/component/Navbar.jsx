@@ -22,7 +22,7 @@ const Navbar = () => {
     <div className=" w-full md:w-[1209px] md:h-[40px] ">
       <div className=" bg-[#f1f1f1] mx-auto flex items-center justify-around text-wrap ">
         <div className="flex gap-2 md:gap-5">
-          <div className="flex gap-1">
+          <Link href='/' ><div className="flex gap-1">
             <img
               src="/logo.png"
               className="md:w-10  overflow-hidden object-cover "
@@ -32,7 +32,7 @@ const Navbar = () => {
               <span className="text-[#064370]">bet</span>
               <span className="text-[#0688ba] ">qix</span>
             </h1>
-          </div>
+          </div></Link>
           <div className="flex md:gap-5 gap-1 mt-1 text-black cursor-pointer">
             <h1 className="">Game</h1>
             <Link href='/ourwinner'>Our Winner</Link>

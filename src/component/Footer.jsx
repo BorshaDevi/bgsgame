@@ -11,22 +11,22 @@ const Footer=()=>{
                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-white ">
                 <div className="space-y-2">
                     <p className="underline underline-offset-8">Polices</p>
-                    <Link href=''>Terms of Use</Link><br></br>
-                    <Link href='/ppolicy'>Privacy Policy</Link><br></br>
-                    <Link href=''>Cookie Policy</Link><br></br>
+                    <Link href='/ppolicy#term'>Terms of Use</Link><br></br>
+                    <Link href='/ppolicy#pp'>Privacy Policy</Link><br></br>
+                    <Link href='/ppolicy#cookie'>Cookie Policy</Link><br></br>
                 </div>
                 <div className="space-y-2">
                     <p className="underline underline-offset-8">About Us</p>
-                    <Link href=''>About Us</Link>
+                    <Link href='/ppolicy#about'>About Us</Link>
                     <br></br>
                   <Link href='/contact'>Contact Us</Link><br></br>
-                    <Link href=''>Our Mission</Link><br></br>
+                    <Link href='/ppolicy#mission'>Our Mission</Link><br></br>
                 </div>
                 <div className="space-y-2">
                     <p className="underline underline-offset-8">Information</p>
                     <Link href=''>Payment Method</Link><br></br>
-                    <Link href=''>Lottery Taxes</Link><br></br>
-                    <Link href=''>FAQ</Link><br></br>
+                    <Link href='/ppolicy#taxe'>Lottery Taxes</Link><br></br>
+                    <Link href='/ppolicy#faq'>FAQ</Link><br></br>
                 </div>
                 {/* <div className="space-y-2 ">
                     <p className="underline underline-offset-8">Social Connected</p>

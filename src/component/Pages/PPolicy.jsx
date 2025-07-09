@@ -5,7 +5,7 @@ const PPolicy=()=>{
              <div className="flex justify-center items-center">
                <div>
                  {/* policies */}
-                <div className="text-start text-black space-y-4">
+                <div id='term' className="text-start text-black space-y-4">
                 <h1 className="uppercase text-3xl font-extralight">Policies</h1>
                  <h4 className="font-semibold underline-offset-8 underline">Terms & Condition</h4>
                  <div className="w-full h-full bg-white rounded-md p-5 text-start shadow space-y-5">
@@ -28,7 +28,7 @@ const PPolicy=()=>{
                  </div>
              </div>
              {/* privacy policy */}
-             <div className="text-start text-black space-y-4">
+             <div id='pp' className="text-start text-black space-y-4">
                 <h4 className="font-semibold underline-offset-8 underline mt-10">Privacy Policy *</h4>
                 <div className="w-full h-full bg-white rounded-md p-5 text-start shadow space-y-5">
                     <p>We collect essential user information such as email addresses, IP addresses, and transaction history.</p>
@@ -54,7 +54,7 @@ const PPolicy=()=>{
                 </div>
              </div>
              {/* Cookie Policy*/}
-             <div className="text-start text-black space-y-4">
+             <div id='cookie' className="text-start text-black space-y-4">
                 <h4 className="font-semibold underline-offset-8 underline mt-10">Cookie Policy*</h4>
                 <div className="w-full h-full bg-white rounded-md p-5 text-start shadow space-y-5">
                     <ul className="list-disc pl-5 space-y-5">
@@ -128,7 +128,7 @@ const PPolicy=()=>{
                 </div>
              </div>
              {/*Winnings & Tax Information*/}
-             <div className="text-start text-black space-y-4">
+             <div id='taxe' className="text-start text-black space-y-4">
                 <h4 className="font-semibold underline-offset-8 underline mt-10">Winnings & Tax Information*</h4>
                 <div className="w-full h-full bg-white rounded-md p-5 text-start shadow space-y-5">
                     <ul className="list-disc pl-5 space-y-5">
@@ -141,13 +141,13 @@ const PPolicy=()=>{
              </div>
 
              {/* ABOUT Us*/}
-             <div className="text-start text-black space-y-4">
+             <div id='about' className="text-start text-black space-y-4">
                 <h4 className="font-semibold underline-offset-8 underline mt-10"> ABOUT Us*</h4>
                 <div className="w-full h-full bg-white rounded-md p-5 text-start shadow space-y-5">
                     <p>We are an online lottery and betting game provider offering instant draw games and skill-based betting such as Ludo and Spin. Our platform<br></br>
                     aims to provide a smooth, secure, and engaging gaming experience. Though we currently operate without a license, we strive to maintain<br></br> 
                     transparency and user satisfaction. Our systems are managed from the Netherlands.</p>
-                    <h6 className="font-semibold underline-offset-8 underline">Our Mission*</h6>
+                    <h6 className="font-semibold underline-offset-8 underline" id='mission'>Our Mission*</h6>
                     <p>To deliver a fun, fair, and responsible online betting experience while prioritizing user security, privacy, and entertainment.</p>
                     <h6 className="font-semibold underline-offset-8 underline">Contact Us*</h6>
                     <p>Email: [support@yourwebsite.com](mailto:support@yourwebsite.com)</p>
@@ -170,7 +170,7 @@ const PPolicy=()=>{
                 </div>
              </div>
              {/* FAQ*/}
-             <div className="text-start text-black space-y-4">
+             <div id='faq' className="text-start text-black space-y-4">
                 <h4 className="font-semibold underline-offset-8 underline mt-10"> FAQ*</h4>
                 <div className="w-full h-full bg-white rounded-md p-5 text-start shadow space-y-5">
                     <div>

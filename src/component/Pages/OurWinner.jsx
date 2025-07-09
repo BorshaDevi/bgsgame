@@ -1,8 +1,16 @@
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
+import { useEffect, useState } from "react";
+import Tilt from 'react-parallax-tilt';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const OurWinner = () => {
+  useEffect(() => {
+      AOS.init();
+    }, []);
+  const [scale, setScale] = useState(1.3);
   return (
     <div className="w-full min-h-screen ">
       <div className="flex justify-center items-center">
@@ -15,7 +23,15 @@ const OurWinner = () => {
           </p>
           <div className="grid md:grid-cols-3 grid-cols-1 gap-10">
             {data.map((da) => (
-              <Card key={da.id} className="w-full max-w-sm">
+              <Tilt key={da.id} tiltEnable={false} transitionSpeed={2500} scale={scale} className="w-full">
+                <Card data-aos="flip-up" data-aos-offset="500"
+    data-aos-delay="100"
+    data-aos-duration="3000"
+    data-aos-easing="ease-in-back"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor=".other-element"
+      className="w-full max-w-sm">
                 <img
                   src={da.image}
                   alt=""
@@ -39,6 +55,7 @@ const OurWinner = () => {
                   </div>
                 </div>
               </Card>
+              </Tilt>
             ))}
           </div>
         </div>

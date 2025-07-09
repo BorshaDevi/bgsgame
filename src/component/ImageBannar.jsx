@@ -3,7 +3,8 @@ import { Button } from "@/components/ui/button";
 const ImageBannar=()=>{
     return(
         <div className="relative w-full mt-10 h-full ">
-        <div className="flex  w-full aspect-[1920/758] ">
+       <div  className="">
+         <div className="flex  w-full aspect-[1920/758]  ">
            <img src='https://res.cloudinary.com/dg1okcxsx/image/upload/v1750952069/1a8acb04534147d53909f9a720695ef98f75dc10_1_sc8wa6.jpg' className="w-1/5 h-full object-cover" alt=''></img>
            <img src='https://res.cloudinary.com/dg1okcxsx/image/upload/v1750952077/e798fb77287ba9c0d0bdd8880fd2304391740344_2_yexvfz.jpg'className="w-1/5 h-full object-cover" alt=''></img>
            <img src='https://res.cloudinary.com/dg1okcxsx/image/upload/v1750952085/0c127471b8d6f365a9f047fd0d3988deae9ec8f9_2_iqlxtz.jpg'className="w-1/5 h-full object-cover" alt=''></img>
@@ -15,6 +16,7 @@ const ImageBannar=()=>{
               <p className="md:text-xl">Enjoy your game and do not forget to share them with your friends.</p>
               <Button className='bg-red-700 hover:bg-red-700  '>Coming Soon</Button>
         </div>
+       </div>
         </div>
     )
 }
