@@ -34,7 +34,8 @@ const Navbar = () => {
             </h1>
           </div></Link>
           <div className="flex md:gap-5 gap-1 mt-1 text-black cursor-pointer">
-            <h1 className="">Game</h1>
+            <Link href=''>Lotteries</Link>
+            <Link href=''>Game</Link>
             <Link href='/ourwinner'>Our Winner</Link>
             {/* hover card */}
             <HoverCard>
