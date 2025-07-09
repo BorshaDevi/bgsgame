@@ -39,8 +39,8 @@ const Bannar=()=>{
         modules={[Keyboard, Scrollbar, Navigation, Pagination]}
         className="mySwiper"
       >
-      <SwiperSlide><img src='https://res.cloudinary.com/dg1okcxsx/image/upload/v1750316401/Frame_4_fxvmno.jpg' alt=''/></SwiperSlide>
-        <SwiperSlide><img src='https://res.cloudinary.com/dg1okcxsx/image/upload/v1752042308/Group_207_xtjh2r.jpg' alt=''/></SwiperSlide>
+      <SwiperSlide className='w-full'><img src='https://res.cloudinary.com/dg1okcxsx/image/upload/v1750316401/Frame_4_fxvmno.jpg' alt=''/></SwiperSlide>
+        <SwiperSlide className='w-full' ><img src='https://res.cloudinary.com/dg1okcxsx/image/upload/v1752042308/Group_207_xtjh2r.jpg' alt=''/></SwiperSlide>
       </Swiper>
     </>
   );
