@@ -3,12 +3,14 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { BsChatDots } from "react-icons/bs";
 import { MdOutlineEmail } from "react-icons/md";
+
 const ContactUs=()=>{
     const [loading ,setLoading]=useState()
     if(loading){
        return <p className="text-red-700">Loading....</p>
     }
     return(
+       <>
         <div className="w-full min-h-screen">
            <div className="flex  ">
             <div className=" mt-16 mx-auto">
@@ -31,18 +33,24 @@ const ContactUs=()=>{
                     </div>
                 </div>
                 {/* text area */}
-                <div>
-                   <p className="text-black mt-5">Email Address: example@.com</p>
+                <div className="md:w-[666px]">
+                    <div className="flex gap-5 mt-5 mb-2 md:w-[377px] md:h-[28px] md:justify-between ">
+                       <p className="text-black mt-5">Email Address:</p>
+                       <p className="text-black mt-5 md:mr-16 mr-36"> example@.com</p>
+                    </div>
+                   
                    <div>
-                    <form>
-                        <div className="w-full h-full flex justify-between ">
+                    <form className="text-black" >
+                        <div className="md:w-[666px] md:h-[48px] w-full h-full flex justify-between">
                             <label className="text-black mt-5">Topic</label>
-                        <input type="text" placeholder='Enter your topic'className="border-gray-400 border w-1/2 h-full p-2 mt-5 " />
+                        <input type="text" placeholder='Enter your topic'className="border-gray-400 border md:w-[450px] md:h-[48px] w-full ml-20 h-full p-1 mt-5 " />
                         </div>
                         <br></br>
-                        <textarea placeholder='Write Your Message'className="border-gray-400 border md:w-[666px] md:h-[262px] w-full h-[200px] p-4 mt-5" ></textarea>
+                        <textarea placeholder='Write Your Message'className="border-gray-400 border md:w-[666px] md:h-[262px] w-full h-[200px] p-1  mt-5" ></textarea>
                         <br></br>
-                        <input type='submit' value='Send' className="text-blue-600 border border-blue-700 rounded-full bg-white  mb-5 py-1 px-6"/>
+                        <div className="flex justify-end">
+                            <input type='submit' value='Send' className="text-blue-600 border border-blue-700 rounded-full bg-white  mb-5 py-1 px-6"/>
+                        </div>
                         </form>
                    </div>
 
@@ -51,6 +59,9 @@ const ContactUs=()=>{
 
            </div>
         </div>
+       </>
     )
 }
 export default ContactUs;
+
+
