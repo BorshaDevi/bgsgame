@@ -15,18 +15,18 @@ const ContactUs=()=>{
                 {/* contact */}
                 <div>
                     <h6 className="text-black text-xl font-extralight">Contact Us</h6>
-                     <div className="flex gap-5 ">
-                       <BsChatDots className="text-blue-500 text-xl"/>
+                     <div className="flex gap-5 mt-5 mb-2 ">
+                       <BsChatDots className="text-blue-500 text-2xl"/>
                        <div className="mt-5">
                         <p className="text-black">Live Chat Our friendly and professional Customer Service team offers live chat assistance <br></br> in several languages</p>
                        </div>
                      </div>
                 </div>
                 {/* Email */}
-                <div>
+                <div className="mt-5">
                     <h6 className="text-black text-xl font-extralight">Email</h6>
-                    <div className="flex gap-5">
-                     <MdOutlineEmail className="text-blue-500 text-xl"/>
+                    <div className="flex gap-5 mt-5 mb-2">
+                     <MdOutlineEmail className="text-blue-500 text-2xl"/>
                      <p className="text-black mt-5">Our team of lottery experts at TheLotter is prepared to provide a quick and thorough <br></br> response to all your questions and concerns via email. Just fill in the required fields <br></br> below, and received lottery help straight to your on-site mailbox in less than 24 hours.</p>
                     </div>
                 </div>
@@ -42,7 +42,7 @@ const ContactUs=()=>{
                         <br></br>
                         <textarea placeholder='Write Your Message'className="border-gray-400 border md:w-[666px] md:h-[262px] w-full h-[200px] p-4 mt-5" ></textarea>
                         <br></br>
-                        <input type='submit' value='Send' className="text-blue-600 border border-blue-700 rounded-r-md rounded-l-md bg-white text-xl mb-5  py-1 px-3"/>
+                        <input type='submit' value='Send' className="text-blue-600 border border-blue-700 rounded-full bg-white  mb-5 py-1 px-6"/>
                         </form>
                    </div>
 
