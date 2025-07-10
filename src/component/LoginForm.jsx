@@ -44,8 +44,8 @@ const LoginForm = ({ openMd, setOpenMd, switchToSignup }) => {
       <Dialog open={openMd} onOpenChange={setOpenMd}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle className="text-2xl text-center text-black">
-              Login to your account
+            <DialogTitle className="text-2xl text-center font-extralight text-black">
+              Login to your Account
             </DialogTitle>
             {/* Login Form */}
             <Form {...form}>
@@ -61,7 +61,7 @@ const LoginForm = ({ openMd, setOpenMd, switchToSignup }) => {
                       <FormControl>
                         <Input
                           placeholder="Enter your email"
-                          className=" border-black border-1 text-black bg-slate-100"
+                          className=" border-black border-1 text-black bg-[#F1F1F1] shadow ring-1 outline-[#808080] outline-1 ring-[#808080]"
                           {...field}
                         />
                       </FormControl>
@@ -78,7 +78,7 @@ const LoginForm = ({ openMd, setOpenMd, switchToSignup }) => {
                         <Input
                           type={open ? "text" : "password"}
                           placeholder="Password"
-                          className=" border-black border-1  text-black bg-slate-100"
+                          className=" border-black border-1 text-black bg-[#F1F1F1] shadow ring-1 outline-[#808080] outline-1 ring-[#808080]"
                           {...field}
                         />
                       </FormControl>
@@ -95,7 +95,7 @@ const LoginForm = ({ openMd, setOpenMd, switchToSignup }) => {
 
                 <Button
                   type="submit"
-                  className="w-full bg-[#05a7b3] hover:bg-[#05a7b3] rounded-full"
+                  className="w-full bg-[#058AB3] hover:bg-[#058AB3] rounded-full"
                 >
                   Login
                 </Button>

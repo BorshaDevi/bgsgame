@@ -69,7 +69,7 @@ const Signup = ({ openMd, setOpenMd, switchToLogin }) => {
        
         <DialogContent>
           <DialogHeader>
-            <DialogTitle className="text-2xl text-center text-black">
+            <DialogTitle className="text-2xl text-center font-extralight text-black">
              Create A Free Account
             </DialogTitle>
             {/* Login Form */}
@@ -86,7 +86,7 @@ const Signup = ({ openMd, setOpenMd, switchToLogin }) => {
                       <FormControl>
                         <Input
                           placeholder="Enter your email"
-                          className=" border-black border-1 text-black bg-gray-100"
+                          className=" border-black border-1 text-black bg-[#F1F1F1] shadow ring-1 outline-[#808080] outline-1 ring-[#808080]"
                           {...field}
                         />
                       </FormControl>
@@ -103,7 +103,7 @@ const Signup = ({ openMd, setOpenMd, switchToLogin }) => {
                         <Input
                           type={open ? "text" : "password"}
                           placeholder="Password"
-                          className=" border-black border-1 text-black bg-gray-100 "
+                          className=" border-black border-1 text-black bg-[#F1F1F1] shadow ring-1 outline-[#808080] outline-1 ring-[#808080] "
                           {...field}
                         />
                       </FormControl>
@@ -128,7 +128,7 @@ const Signup = ({ openMd, setOpenMd, switchToLogin }) => {
                         value={field.value}
                         onValueChange={field.onChange}
                       >
-                        <SelectTrigger className="w-full border-black border-1 text-black bg-gray-100">
+                        <SelectTrigger className="w-full border-black border-1 text-black bg-[#F1F1F1] shadow ring-1 outline-[#808080] outline-1 ring-[#808080]">
                           <SelectValue placeholder="Bangladesh" />
                         </SelectTrigger>
                         <SelectContent className="border-1 border-black">
@@ -188,7 +188,7 @@ const Signup = ({ openMd, setOpenMd, switchToLogin }) => {
 
                 <Button
                   type="submit"
-                  className="w-full bg-[#05a7b3] hover:bg-[#05a7b3] rounded-full"
+                  className="w-full bg-[#058AB3] hover:bg-[#058AB3] rounded-full"
                 >
                   Sign Up
                 </Button>
