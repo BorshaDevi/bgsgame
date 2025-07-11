@@ -81,7 +81,7 @@ const Navbar = () => {
             </div>
           </div>
           {/* sign login */}
-          <div className="flex items-center gap-1 md:gap-5">
+          <div className="flex items-center gap-2">
             {/*  */}
             <button
               onClick={() => setShowLogin(true)}
@@ -112,7 +112,7 @@ const Navbar = () => {
                 setShowLogin(true);
               }}
             ></Signup>
-            <div className="flex text-black ">
+            <div className="flex text-black ml-0">
               <p className="flex gap-2 ">
                 <TfiWorld className="mt-1"></TfiWorld>English
               </p>
