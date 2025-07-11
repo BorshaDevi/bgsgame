@@ -31,10 +31,10 @@ const Bannar=()=>{
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide ><img src='https://res.cloudinary.com/dg1okcxsx/image/upload/v1750316401/Frame_4_fxvmno.jpg' alt=''/></SwiperSlide>
+        <SwiperSlide ><img src='https://res.cloudinary.com/dg1okcxsx/image/upload/v1752208186/WhatsApp_Image_2025-07-10_at_15.25.57_7f8a7d25_hgey1l.jpg' alt=''/></SwiperSlide>
         <SwiperSlide  ><img src='https://res.cloudinary.com/dg1okcxsx/image/upload/v1752042308/Group_207_xtjh2r.jpg' alt=''/></SwiperSlide>
-        <SwiperSlide ><img src='https://res.cloudinary.com/dg1okcxsx/image/upload/v1750316401/Frame_4_fxvmno.jpg' alt=''/></SwiperSlide>
-        <SwiperSlide  ><img src='https://res.cloudinary.com/dg1okcxsx/image/upload/v1752042308/Group_207_xtjh2r.jpg' alt=''/></SwiperSlide>
+        {/* <SwiperSlide ><img src='https://res.cloudinary.com/dg1okcxsx/image/upload/v1750316401/Frame_4_fxvmno.jpg' alt=''/></SwiperSlide>
+        <SwiperSlide  ><img src='https://res.cloudinary.com/dg1okcxsx/image/upload/v1752042308/Group_207_xtjh2r.jpg' alt=''/></SwiperSlide> */}
       </Swiper>
       
     </>

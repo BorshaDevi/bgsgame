@@ -28,7 +28,7 @@ const Navbar = () => {
               className="md:w-10  overflow-hidden object-cover "
               alt="logo"
             />
-            <h1 className="text-xl mb-1 font-semibold subpixel-antialiased font-[sans-serif] brightness-100 backdrop-blur-sm">
+            <h1 className="text-xl mb-1 font-bold  font-comfortaa subpixel-antialiased  brightness-100 backdrop-blur-sm">
               <span className="text-[#064370]">bet</span>
               <span className="text-[#0688ba] ">qix</span>
             </h1>

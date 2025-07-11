@@ -9,24 +9,29 @@ const Footer=()=>{
             <div className="bg-black h-1/2 p-10 mx-auto">
             <img src='https://res.cloudinary.com/dg1okcxsx/image/upload/v1750497533/betquix_white_logo_1_nwitsk.jpg' className="w-36 mb-10" alt=''></img>
                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-white ">
-                <div className="space-y-2">
+                <div className="space-y-3">
                     <p className="underline underline-offset-8">Polices</p>
-                    <Link href='/ppolicy#term'>Terms of Use</Link><br></br>
-                    <Link href='/ppolicy#pp'>Privacy Policy</Link><br></br>
-                    <Link href='/ppolicy#cookie'>Cookie Policy</Link><br></br>
+                    <div className="flex flex-col gap-2">
+                        <Link href='/ppolicy#term'>Terms of Use</Link>
+                    <Link href='/ppolicy#pp'>Privacy Policy</Link>
+                    <Link href='/ppolicy#cookie'>Cookie Policy</Link>
+                    </div>
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-3">
                     <p className="underline underline-offset-8">About Us</p>
-                    <Link href='/ppolicy#about'>About Us</Link>
-                    <br></br>
-                  <Link href='/contact'>Contact Us</Link><br></br>
-                    <Link href='/ppolicy#mission'>Our Mission</Link><br></br>
+                    <div className="flex flex-col gap-2">
+                        <Link href='/ppolicy#about'>About Us</Link>
+                  <Link href='/contact'>Contact Us</Link>
+                    <Link href='/ppolicy#mission'>Our Mission</Link>
+                    </div>
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-3">
                     <p className="underline underline-offset-8">Information</p>
-                    <Link href=''>Payment Method</Link><br></br>
-                    <Link href='/ppolicy#taxe'>Lottery Taxes</Link><br></br>
-                    <Link href='/ppolicy#faq'>FAQ</Link><br></br>
+                    <div className="flex flex-col gap-2">
+                        <Link href=''>Payment Method</Link>
+                    <Link href='/ppolicy#taxe'>Lottery Taxes</Link>
+                    <Link href='/ppolicy#faq'>FAQ</Link>
+                    </div>
                 </div>
                 {/* <div className="space-y-2 ">
                     <p className="underline underline-offset-8">Social Connected</p>
