@@ -48,8 +48,11 @@ const Navbar = () => {
             </Link>
             <div className="flex md:gap-5 gap-1 mt-1 text-black cursor-pointer">
               <Link href="">Lotteries</Link>
+              <span className="text-black opacity-50">|</span>
               <Link href="">Game</Link>
+              <span className="text-black opacity-50">|</span>
               <Link href="/ourwinner">Our Winner</Link>
+              <span className="text-black opacity-50">|</span>
               {/* hover card */}
               <HoverCard>
                 <HoverCardTrigger asChild>
@@ -82,13 +85,13 @@ const Navbar = () => {
             {/*  */}
             <button
               onClick={() => setShowLogin(true)}
-              className="bg-[#f22c4d] rounded-md text-white px-2 py-1 hover:bg-[#f22c4d]"
+              className="bg-[#f22c4d] rounded-md text-white px-8 py-2 hover:bg-[#f22c4d]"
             >
               Login
             </button>
             <button
               onClick={() => setShowSignup(true)}
-              className="rounded-md border border-black px-2 text-black py-1"
+              className="rounded-md border border-black px-6 py-2 text-black "
             >
               Sign Up
             </button>
@@ -128,14 +131,49 @@ const Navbar = () => {
             {/* dropdown menu */}
             <DropdownMenu>
               <DropdownMenuTrigger><FiMenu className="text-black text-2xl "/></DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuContent className='text-center'>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem><Link href="">Lotteries</Link></DropdownMenuItem>
                 <DropdownMenuItem><Link href="">Game</Link></DropdownMenuItem>
                 <DropdownMenuItem><Link href="/ourwinner">Our Winner</Link></DropdownMenuItem>
                 <DropdownMenuItem>
-                  
+                  <div className="grid items-center ">
+            {/*  */}
+            <button
+              onClick={() => setShowLogin(true)}
+              className="bg-[#f22c4d] rounded-md text-white px-4 py-1 hover:bg-[#f22c4d] w-full mb-2"
+            >
+              Login
+            </button>
+            <button
+              onClick={() => setShowSignup(true)}
+              className="rounded-md border mb-2 border-black px-2 text-black py-1"
+            >
+              Sign Up
+            </button>
+
+            <LoginForm
+              openMd={showLogin}
+              setOpenMd={setShowLogin}
+              switchToSignup={() => {
+                setShowLogin(false);
+                setShowSignup(true);
+              }}
+            ></LoginForm>
+            <Signup
+              openMd={showSignup}
+              setOpenMd={setShowSignup}
+              switchToLogin={() => {
+                setShowSignup(false);
+                setShowLogin(true);
+              }}
+            ></Signup>
+            <div className="flex text-black ">
+              <p className="flex gap-2 ">
+                <TfiWorld className="mt-1"></TfiWorld>English
+              </p>
+            </div>
+          </div>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
