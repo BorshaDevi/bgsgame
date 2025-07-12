@@ -29,7 +29,7 @@ const Navbar = () => {
   const isLogin=true;
   return (
     <div className="">
-      <div className=" md:items-center md:justify-center p-4 md:mx-auto w-full">
+      <div className="md:flex md:items-center md:justify-center p-4 md:mx-auto w-full">
         <div className=" bg-[#f1f1f1] text-black">
              {/* desktop */}
       <div className=" w-full md:w-[1209px] md:h-[40px]  md:block hidden ">
