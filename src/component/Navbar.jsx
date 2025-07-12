@@ -28,19 +28,23 @@ const Navbar = () => {
   const [showSignup, setShowSignup] = useState(false);
   const isLogin=true;
   return (
-    <div className="mt-5">
-      {/* desktop */}
+    <div className="">
+      <div className=" md:items-center md:justify-center p-4 md:mx-auto w-full">
+        <div className=" bg-[#f1f1f1] text-black">
+             {/* desktop */}
       <div className=" w-full md:w-[1209px] md:h-[40px]  md:block hidden ">
+        {/* desktop device */}
         <div className=" bg-[#f1f1f1] mx-auto flex items-center justify-around text-wrap ">
+          
           <div className="flex gap-2 md:gap-5">
             <Link href="/">
-              <div className="flex gap-1">
+              <div className="flex object-cover">
                 <img
                   src="/logo.png"
-                  className="md:w-10  overflow-hidden object-cover "
+                  className="md:w-8  overflow-hidden object-cover "
                   alt="logo"
                 />
-                <h1 className="text-xl mb-1 font-bold  font-comfortaa subpixel-antialiased  brightness-100 backdrop-blur-sm">
+                <h1 className="text-xl font-bold  font-comfortaa subpixel-antialiased  brightness-100 backdrop-blur-sm">
                   <span className="text-[#064370]">bet</span>
                   <span className="text-[#0688ba] ">qix</span>
                 </h1>
@@ -180,7 +184,10 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+        </div>
+      </div>
     </div>
   );
 };
 export default Navbar;
+
