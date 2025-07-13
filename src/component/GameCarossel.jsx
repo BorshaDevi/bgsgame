@@ -73,7 +73,7 @@ const GameCarossel = () => {
       <div className="relative">
         <Slider {...settings}>
           {data.map((da) => (
-            <div key={da.id} className="px-2">
+            <div key={da.id} className="">
               <Card className="overflow-hidden mx-auto w-52">
                 <div className="relative">
                   <img
