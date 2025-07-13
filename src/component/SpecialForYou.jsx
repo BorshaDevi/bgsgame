@@ -10,19 +10,19 @@ const SpecialForYou = () => {
   }, []);
   return (
     <>
-     <div className="mt-10 w-full" >
-  <div className="w-full max-w-[1204px] mx-auto bg-cyan-200 bg-opacity-40 rounded-md px-4 md:px-8">
+     <div className="mt-16 max-w-6xl mx-auto px-12 " >
+  <div className="bg-white  rounded-md">
     <h1 className="text-center font-medium text-2xl text-black mt-6 animate__animated animate__flip animate__delay-2s animate__slower 3s animate__infinite	infinite" >
       Special For You
     </h1>
-    <div className="p-3">
+    <div className="">
       {/* first div */}
       <div className="flex md:flex-row flex-col justify-center items-center gap-10 mb-5">
         <div data-aos="fade-down-right" data-aos-easing="ease-in-out">
           <img
             src="https://res.cloudinary.com/dg1okcxsx/image/upload/v1750924704/37e93d8015c5abba4d6b207bb212f6a310dcc0a2-removebg-preview_dabywh.png"
             alt=""
-            className="md:w-[413px] md:h-[350px] rounded-md"
+            className="md:w-full md:h-full rounded-md"
             
           />
         </div>
@@ -60,7 +60,7 @@ const SpecialForYou = () => {
           <img
             src="https://res.cloudinary.com/dg1okcxsx/image/upload/v1750922725/1931a0b7b783fb007422645b1ccde00e1e3e1093_be14xc.png"
             alt=""
-            className="bg-white md:w-[413px] md:h-[350px] rounded-md"
+            className="bg-gray-200 md:w-full md:h-full rounded-md"
           />
         </div>
       </div>
