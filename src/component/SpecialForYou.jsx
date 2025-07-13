@@ -12,10 +12,10 @@ const SpecialForYou = () => {
     <>
      <div className="mt-16 max-w-6xl mx-auto px-12 " >
   <div className="bg-white  rounded-md">
-    <h1 className="text-center font-medium text-2xl text-black mt-6 animate__animated animate__flip animate__delay-2s animate__slower 3s animate__infinite	infinite" >
+    <h1 className="text-center pt-8  font-medium text-3xl text-black flex justify-center items-center animate__animated animate__flip animate__delay-2s animate__slower 3s animate__infinite	infinite" >
       Special For You
     </h1>
-    <div className="">
+    
       {/* first div */}
       <div className="flex md:flex-row flex-col justify-center items-center gap-10 mb-5">
         <div data-aos="fade-down-right" data-aos-easing="ease-in-out">
@@ -64,7 +64,7 @@ const SpecialForYou = () => {
           />
         </div>
       </div>
-    </div>
+    
   </div>
 </div>
 
