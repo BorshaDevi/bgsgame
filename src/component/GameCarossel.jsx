@@ -66,31 +66,39 @@ const GameCarossel = () => {
     ],
   };
   return (
-    <div className="mt-10 w-full px-4 ">
-      <h1 className="text-center font-medium mb-10 text-2xl text-black">
-        Explore betqix games
+   <div className="mt-16 max-w-6xl mx-auto px-4">
+      <h1 className="text-center font-medium mb-10 text-3xl text-black">
+        Explore betquix games
       </h1>
-
-      <Slider {...settings}>
-        {data.map((da) => (
-          <div key={da.id} className="p-2">
-            <Card className="rounded-md overflow-hidden">
-              <div className="relative">
-                <img
-                  src={da.image}
-                  alt="game"
-                  className="h-[350px] w-full object-cover rounded-md"
-                />
-                <div className="absolute bottom-0 left-0 right-0">
-                  <Button className="w-full rounded-b-md text-white bg-red-700 hover:bg-red-700">
-                    Coming Soon...
-                  </Button>
+      <div className="relative">
+        <Slider {...settings}>
+          {data.map((da) => (
+            <div key={da.id} className="px-2">
+              <Card className="overflow-hidden mx-auto w-52">
+                <div className="relative">
+                  <img
+                    src={da.image}
+                    alt="game"
+                    className="object-cover w-52 h-64 rounded-md"
+                  />
+                  {da.live ? (
+                    <div className="text-center py-3 text-white bg-cyan-700 font-semibold">
+                      <div>{da.label}</div>
+                      <div className="text-xs mt-1">{da.countdown}</div>
+                    </div>
+                  ) : (
+                    <div className="absolute bottom-0 left-0 right-0">
+                      <Button className="w-full rounded-b-md text-white bg-red-700 hover:bg-red-700 text-sm">
+                        Coming Soon...
+                      </Button>
+                    </div>
+                  )}
                 </div>
-              </div>
-            </Card>
-          </div>
-        ))}
-      </Slider>
+              </Card>
+            </div>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 };
@@ -100,22 +108,27 @@ const data = [
   {
     id: "1",
     image:
-      "https://res.cloudinary.com/dg1okcxsx/image/upload/v1750875148/53644adc1cf6bbe4c3a0d66b80efa286aef97cbc_zif1l2.png",
+      "https://res.cloudinary.com/dg1okcxsx/image/upload/v1752379852/WhatsApp_Image_2025-07-11_at_23.06.26_c8ff9d1e_nxysh2.jpg",
+    //   label: "USD 241 Million",
+    // live: true,
+    // countdown: "05:10:10",
   },
   {
     id: "2",
     image:
-      "https://res.cloudinary.com/dg1okcxsx/image/upload/v1750876200/0c127471b8d6f365a9f047fd0d3988deae9ec8f9_1_cfgjaz.jpg",
+      "https://res.cloudinary.com/dg1okcxsx/image/upload/v1752379821/WhatsApp_Image_2025-07-11_at_23.05.23_3bca24d2_jw8pjp.jpg",
+      
+    
   },
   {
     id: "3",
     image:
-      "https://res.cloudinary.com/dg1okcxsx/image/upload/v1750875073/4c1fcc18c89549743fc9a114f66ca40a5bfcdfe5_tyruch.png",
+      "https://res.cloudinary.com/dg1okcxsx/image/upload/v1752379841/WhatsApp_Image_2025-07-11_at_23.05.56_3a48e1d9_vl1erg.jpg",
   },
   {
     id: "4",
     image:
-      "https://res.cloudinary.com/dg1okcxsx/image/upload/v1750875103/52afda72fe2a371b1abfb73bbf67cb9cbc140767_yjpen9.png",
+      "https://res.cloudinary.com/dg1okcxsx/image/upload/v1752379829/WhatsApp_Image_2025-07-11_at_23.05.42_2679e630_w87fuu.jpg",
   },
   {
     id: "5",
