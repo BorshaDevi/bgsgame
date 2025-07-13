@@ -10,14 +10,14 @@ const SpecialForYou = () => {
   }, []);
   return (
     <>
-     <div className="mt-16 max-w-6xl mx-auto px-12 " >
+     <div className="mt-16 max-w-6xl mx-auto px-4 md:px-12 " >
   <div className="bg-white  rounded-md">
     <h1 className="text-center pt-8  font-medium text-3xl text-black flex justify-center items-center animate__animated animate__flip animate__delay-2s animate__slower 3s animate__infinite	infinite" >
       Special For You
     </h1>
     
       {/* first div */}
-      <div className="flex md:flex-row flex-col justify-center items-center gap-10 mb-5">
+      <div className="flex md:flex-row flex-col justify-center items-center gap-10 pt-0 mb-5">
         <div data-aos="fade-down-right" data-aos-easing="ease-in-out">
           <img
             src="https://res.cloudinary.com/dg1okcxsx/image/upload/v1750924704/37e93d8015c5abba4d6b207bb212f6a310dcc0a2-removebg-preview_dabywh.png"
@@ -26,7 +26,7 @@ const SpecialForYou = () => {
             
           />
         </div>
-        <div className="space-y-3 text-left">
+        <div className="md:space-y-3 space-y-5 text-left">
           <h6 className="text-black">Doller Ticket</h6>
           <h1 className="text-black text-xl">
             Welcome Offer: Enjoy a special offer on <br /> your first order
@@ -44,7 +44,7 @@ const SpecialForYou = () => {
 
       {/* last div */}
       <div className="flex md:flex-row flex-col justify-center items-center gap-10 mt-5">
-        <div className="space-y-3 text-left">
+        <div className="md:space-y-3 space-y-5 text-left">
           <h6 className="text-black">Winner</h6>
           <h1 className="text-black text-xl">
             Meet the incredible winner who just <br /> bagged a massive reward
