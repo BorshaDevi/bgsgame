@@ -13,10 +13,10 @@ const Account = () => {
   return (
     <div className="w-full min-h-screen mt-10">
       <div className="text-center">
-        <div className="flex justify-center items-center text-black">
+        <div className="flex justify-center items-center gap-10 text-black">
           {/* my account */}
-          <div>
-            <h6 className="text-black font-extralight text-xl text-start">
+          <div className="">
+            <h6 className="text-black font-extralight text-xl text-start mb-6">
               My Account
             </h6>
             <Card className="w-full max-w-sm ">
@@ -63,7 +63,7 @@ const Account = () => {
             </Card>
           </div>
           {/* Data */}
-          <div>
+          <div className="w-full max-w-sm mt-8">
            <TabsCom></TabsCom>
           </div>
         </div>
