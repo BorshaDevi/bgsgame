@@ -23,21 +23,40 @@ import { FaFacebook } from "react-icons/fa6";
 import { BsEye } from "react-icons/bs";
 import { BsEyeSlash } from "react-icons/bs";
 import { useState } from "react";
+import { useUrl } from "./hooks/useUrl";
 
 const formSchema = z.object({
-  username: z.string().min(2).max(50),
+  username: z.string({
+    message: 'Please enter your name',
+  }),
+  password: z.string().min(8, {
+    message: "Password must be at least 8 characters long",
+  }),
 });
 const LoginForm = ({ openMd, setOpenMd, switchToSignup }) => {
+  const baseurl=useUrl();
   const [open, setOpen] = useState(false);
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      email: "",
+      username: "",
       password: "",
     },
   });
   function onSubmit(values) {
     console.log(values);
+    const data={
+      username:values.username,
+      password:values.password,
+    }
+    console.log(data, "data");
+    // baseurl.post('/register',data)
+    // .then(res =>{
+    //   console.log(res.data , 'signup success')
+    // })
+    // .catch(err => {
+    //   console.error("Error during registration:", err);
+    // })
   }
   return (
     <div>
@@ -55,12 +74,12 @@ const LoginForm = ({ openMd, setOpenMd, switchToSignup }) => {
               >
                 <FormField
                   control={form.control}
-                  name="email"
+                  name="username"
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
                         <Input
-                          placeholder="Enter your email"
+                          placeholder="Enter your name"
                           className=" border-black border-1 text-black bg-[#F1F1F1] shadow ring-1 outline-[#808080] outline-1 ring-[#808080]"
                           {...field}
                         />

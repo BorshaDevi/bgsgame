@@ -28,10 +28,10 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { FaFacebook } from "react-icons/fa6";
 import { BsEye } from "react-icons/bs";
 import { BsEyeSlash } from "react-icons/bs";
 import { useState } from "react";
+import { useUrl } from "./hooks/useUrl";
 
 const formSchema = z.object({
   email: z.string().email({
@@ -40,28 +40,42 @@ const formSchema = z.object({
   password: z.string().min(8, {
     message: "Password must be at least 8 characters long",
   }),
-  country: z.string({
-    message: 'You must select country.'
+  username: z.string({
+    message: 'Please enter your name',
   }),
   terms:z.boolean({
     message: "You must accept the terms and conditions",
   }),
-  term:z.boolean().optional(),
+  term:z.boolean(),
 });
 const Signup = ({ openMd, setOpenMd, switchToLogin }) => {
+  const baseurl=useUrl();
   const [open, setOpen] = useState(false);
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
       email: "",
       password: "",
-      country: "",
+      username: "",
       terms:'',
       term:'',
     },
   });
   function onSubmit(values) {
-    console.log(values);
+    // console.log(values , "values");
+    const data={
+      username:values.username,
+      email:values.email,
+      password:values.password,
+    }
+    console.log(data, "data");
+    baseurl.post('/register',data)
+    .then(res =>{
+      console.log(res.data , 'signup success')
+    })
+    .catch(err => {
+      console.error("Error during registration:", err);
+    })
   }
   return (
     <div>
@@ -80,12 +94,12 @@ const Signup = ({ openMd, setOpenMd, switchToLogin }) => {
               >
                 <FormField
                   control={form.control}
-                  name="email"
+                  name="username"
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
                         <Input
-                          placeholder="Enter your email"
+                          placeholder="Enter your name"
                           className=" border-black border-1 text-black bg-[#F1F1F1] shadow ring-1 outline-[#808080] outline-1 ring-[#808080]"
                           {...field}
                         />
@@ -121,23 +135,16 @@ const Signup = ({ openMd, setOpenMd, switchToLogin }) => {
                 />
                 <FormField
                   control={form.control}
-                  name="country"
+                  name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <Select
-                        value={field.value}
-                        onValueChange={field.onChange}
-                      >
-                        <SelectTrigger className="w-full border-black border-1 text-black bg-[#F1F1F1] shadow ring-1 outline-[#808080] outline-1 ring-[#808080]">
-                          <SelectValue placeholder="Bangladesh" />
-                        </SelectTrigger>
-                        <SelectContent className="border-1 border-black">
-                          <SelectItem value="bangladesh">Bangladesh</SelectItem>
-                          <SelectItem value="india">India</SelectItem>
-                          <SelectItem value="China">China</SelectItem>
-                        </SelectContent>
-                      </Select>
-
+                      <FormControl>
+                        <Input
+                          placeholder="Enter your email"
+                          className=" border-black border-1 text-black bg-[#F1F1F1] shadow ring-1 outline-[#808080] outline-1 ring-[#808080]"
+                          {...field}
+                        />
+                      </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
