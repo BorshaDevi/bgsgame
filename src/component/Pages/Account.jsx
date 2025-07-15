@@ -13,7 +13,7 @@ const Account = () => {
   return (
     <div className="w-full min-h-screen mt-10">
       <div className="text-center">
-        <div className="flex justify-center items-center gap-10 text-black">
+        <div className="md:flex md:justify-center md:items-center  ml-5 md:ml-0 gap-10 text-black">
           {/* my account */}
           <div className="">
             <h6 className="text-black font-extralight text-xl text-start mb-6">
