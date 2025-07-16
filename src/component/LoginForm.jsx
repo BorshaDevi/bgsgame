@@ -50,13 +50,13 @@ const LoginForm = ({ openMd, setOpenMd, switchToSignup }) => {
       password:values.password,
     }
     console.log(data, "data");
-    // baseurl.post('/register',data)
-    // .then(res =>{
-    //   console.log(res.data , 'signup success')
-    // })
-    // .catch(err => {
-    //   console.error("Error during registration:", err);
-    // })
+    baseurl.post('/register',data)
+    .then(res =>{
+      console.log(res.data , 'signup success')
+    })
+    .catch(err => {
+      console.error("Error during registration:", err);
+    })
   }
   return (
     <div>

@@ -72,6 +72,10 @@ const Signup = ({ openMd, setOpenMd, switchToLogin }) => {
     baseurl.post('/register',data)
     .then(res =>{
       console.log(res.data , 'signup success')
+      if(res.data.message=== 'User registered'){
+        
+      }
+
     })
     .catch(err => {
       console.error("Error during registration:", err);
