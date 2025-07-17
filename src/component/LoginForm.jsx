@@ -6,6 +6,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import toast, { Toaster } from 'react-hot-toast';
 
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -24,6 +25,7 @@ import { BsEye } from "react-icons/bs";
 import { BsEyeSlash } from "react-icons/bs";
 import { useState } from "react";
 import { useUrl } from "./hooks/useUrl";
+import { redirect, useRouter } from "next/navigation";
 
 const formSchema = z.object({
   username: z.string({
@@ -34,6 +36,7 @@ const formSchema = z.object({
   }),
 });
 const LoginForm = ({ openMd, setOpenMd, switchToSignup }) => {
+  const router=useRouter()
   const baseurl=useUrl();
   const [open, setOpen] = useState(false);
   const form = useForm({
@@ -46,16 +49,26 @@ const LoginForm = ({ openMd, setOpenMd, switchToSignup }) => {
   function onSubmit(values) {
     console.log(values);
     const data={
-      username:values.username,
+      identifier:values.username,
       password:values.password,
     }
     console.log(data, "data");
-    baseurl.post('/register',data)
+    baseurl.post('/login',data)
     .then(res =>{
-      console.log(res.data , 'signup success')
+      console.log(res.data , 'login successfully ')
+      if(res.data.message==='Login successful'){
+        form.reset();
+        setOpenMd(false);
+        localStorage.setItem('user', JSON.stringify(res.data.user.id));
+        toast.success('Login successful')
+        router.push('/')
+      }
+      else{
+        toast.error('Login failed, please try again');
+      }
     })
     .catch(err => {
-      console.error("Error during registration:", err);
+      console.error("Error during Login:", err);
     })
   }
   return (
@@ -138,6 +151,9 @@ const LoginForm = ({ openMd, setOpenMd, switchToSignup }) => {
           </DialogHeader>
         </DialogContent>
       </Dialog>
+      <Toaster
+            position="top-center"
+            />
     </div>
   );
 };

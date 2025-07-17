@@ -4,8 +4,8 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
+import toast, { Toaster } from 'react-hot-toast';
 
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -18,13 +18,6 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -32,6 +25,9 @@ import { BsEye } from "react-icons/bs";
 import { BsEyeSlash } from "react-icons/bs";
 import { useState } from "react";
 import { useUrl } from "./hooks/useUrl";
+import Loading from "@/app/loading";
+import { useRouter } from "next/navigation";
+
 
 const formSchema = z.object({
   email: z.string().email({
@@ -49,7 +45,9 @@ const formSchema = z.object({
   term:z.boolean(),
 });
 const Signup = ({ openMd, setOpenMd, switchToLogin }) => {
+  const router=useRouter()
   const baseurl=useUrl();
+  const [loading , setLoading] = useState(false);
   const [open, setOpen] = useState(false);
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -72,8 +70,34 @@ const Signup = ({ openMd, setOpenMd, switchToLogin }) => {
     baseurl.post('/register',data)
     .then(res =>{
       console.log(res.data , 'signup success')
-      if(res.data.message=== 'User registered'){
-        
+      if(res.data.message==='User registered'){
+        setOpenMd(false)
+        toast.success('Signup successful')
+        setLoading(true);
+        const da={
+      identifier:values.username,
+      password:values.password,
+    }
+    // login after signup
+    console.log(da, "login data after signup");
+    baseurl.post('/login',da)
+    .then(res => {
+      if(res.data.message==='Login successful'){
+        console.log(res.data , 'login successfully from signup')
+        form.reset();
+        setLoading(false)
+        localStorage.setItem('user', JSON.stringify(res.data.id));
+        router.push('/')
+      }
+      else{
+        setLoading(false);
+        toast.error('Login failed, please try again');
+      }
+    }
+  ).catch(err => {
+      console.error("Error during login form signup page:", err);
+      setLoading(false);
+    })
       }
 
     })
@@ -227,6 +251,14 @@ const Signup = ({ openMd, setOpenMd, switchToLogin }) => {
           </DialogHeader>
         </DialogContent>
       </Dialog>
+      <Toaster
+      position="top-center"
+      />
+      {loading && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <Loading />
+  </div>
+)}
     </div>
   );
 };
