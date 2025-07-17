@@ -60,6 +60,7 @@ const LoginForm = ({ openMd, setOpenMd, switchToSignup }) => {
         form.reset();
         setOpenMd(false);
         localStorage.setItem('user', JSON.stringify(res.data.user.id));
+        window.dispatchEvent(new Event("userChanged"));
         toast.success('Login successful')
         router.push('/')
       }

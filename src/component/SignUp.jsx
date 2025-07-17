@@ -87,6 +87,7 @@ const Signup = ({ openMd, setOpenMd, switchToLogin }) => {
         form.reset();
         setLoading(false)
         localStorage.setItem('user', JSON.stringify(res.data.id));
+        window.dispatchEvent(new Event("userChanged"));
         router.push('/')
       }
       else{
