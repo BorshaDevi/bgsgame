@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/hover-card";
 import Signup from "./SignUp";
 import LoginForm from "./LoginForm";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { FiMenu } from "react-icons/fi";
 
@@ -26,7 +26,17 @@ import {
 const Navbar = () => {
   const [showLogin, setShowLogin] = useState(false);
   const [showSignup, setShowSignup] = useState(false);
-  const isLogin=true;
+  const [user , setUser]=useState(null);
+  useEffect(( )=> {
+    const user=localStorage.getItem('user');
+    console.log(user, "user in navbar");
+    if(user){
+      setUser(JSON.parse(user));
+    }
+    else{
+      setUser(null);
+    }
+  },[])
   return (
     <div className="">
       <div className="md:flex md:items-center md:justify-center p-4 md:mx-auto w-full">
@@ -85,6 +95,11 @@ const Navbar = () => {
             </div>
           </div>
           {/* sign login */}
+          {user ?  
+          <div className="flex items-center gap-2">
+            
+          </div>
+          : 
           <div className="flex items-center gap-2">
             {/*  */}
             <button
@@ -116,12 +131,14 @@ const Navbar = () => {
                 setShowLogin(true);
               }}
             ></Signup>
-            <div className="flex text-black ml-0">
+            
+          </div>
+          }
+          <div className="flex text-black ml-0">
               <p className="flex gap-2 ">
                 <TfiWorld className="mt-1"></TfiWorld>English
               </p>
             </div>
-          </div>
         </div>
       </div>
       {/* mobile device */}
