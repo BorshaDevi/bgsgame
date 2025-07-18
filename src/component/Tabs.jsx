@@ -2,7 +2,8 @@
 import { Card } from '@/components/ui/card';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-const TabsCom=()=>{
+const TabsCom=({cards})=>{
+  console.log (cards, "cards in tabs");
     return(
         <>
         <div className="w-full h-full max-w-2xl mx-auto bg-white p-4  rounded-md">
@@ -21,48 +22,16 @@ const TabsCom=()=>{
             </div>
             <div className="tab-content-container overflow-x-auto max-w-full grid grid-cols-2 p-2 rounded">
               <div className='flex'>
-                <Card className="w-full max-w-sm bg-[#058AB3] p-2">
+                {cards?.map((card , index)=> {
+                  <Card key={index} className="w-full max-w-sm bg-[#058AB3] p-2">
                 <h1 className='text-start text-white'>05:10:10</h1>
                 <img
                 className="w-full  object-cover rounded-md flex justify-center items-center"
                   src="https://res.cloudinary.com/dg1okcxsx/image/upload/v1750875364/f32f6efd9fdf7ba4459c09b0f1618c561cf13d92_osnlto.png"/>
                 <p className='text-white'>US$ <span className='text-xl'>241</span> Milloin</p>
                 </Card>
-                <Card className="w-full max-w-sm bg-[#058AB3] p-2">
-                <h1 className='text-start text-white'>05:10:10</h1>
-                <img
-                className="w-full  object-cover rounded-md flex justify-center items-center"
-                  src="https://res.cloudinary.com/dg1okcxsx/image/upload/v1750875364/f32f6efd9fdf7ba4459c09b0f1618c561cf13d92_osnlto.png"/>
-                <p className='text-white'>US$ <span className='text-xl'>241</span> Milloin</p>
-                </Card>
-                <Card className="w-full max-w-sm bg-[#058AB3] p-2">
-                <h1 className='text-start text-white'>05:10:10</h1>
-                <img
-                className="w-full  object-cover rounded-md flex justify-center items-center"
-                  src="https://res.cloudinary.com/dg1okcxsx/image/upload/v1750875364/f32f6efd9fdf7ba4459c09b0f1618c561cf13d92_osnlto.png"/>
-                <p className='text-white'>US$ <span className='text-xl'>241</span> Milloin</p>
-                </Card>
-                <Card className="w-full max-w-sm bg-[#058AB3] p-2">
-                <h1 className='text-start text-white'>05:10:10</h1>
-                <img
-                className="w-full  object-cover rounded-md flex justify-center items-center"
-                  src="https://res.cloudinary.com/dg1okcxsx/image/upload/v1750875364/f32f6efd9fdf7ba4459c09b0f1618c561cf13d92_osnlto.png"/>
-                <p className='text-white'>US$ <span className='text-xl'>241</span> Milloin</p>
-                </Card>
-                <Card className="w-full max-w-sm bg-[#058AB3] p-2">
-                <h1 className='text-start text-white'>05:10:10</h1>
-                <img
-                className="w-full  object-cover rounded-md flex justify-center items-center"
-                  src="https://res.cloudinary.com/dg1okcxsx/image/upload/v1750875364/f32f6efd9fdf7ba4459c09b0f1618c561cf13d92_osnlto.png"/>
-                <p className='text-white'>US$ <span className='text-xl'>241</span> Milloin</p>
-                </Card>
-                <Card className="w-full max-w-sm bg-[#058AB3] p-2">
-                <h1 className='text-start text-white'>05:10:10</h1>
-                <img
-                className="w-full  object-cover rounded-md flex justify-center items-center"
-                  src="https://res.cloudinary.com/dg1okcxsx/image/upload/v1750875364/f32f6efd9fdf7ba4459c09b0f1618c561cf13d92_osnlto.png"/>
-                <p className='text-white'>US$ <span className='text-xl'>241</span> Milloin</p>
-                </Card>
+                })}
+                
               </div>
               <span>
                 
