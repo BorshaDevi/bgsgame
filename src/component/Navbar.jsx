@@ -80,9 +80,7 @@ const Navbar = () => {
                   </div>
                 </Link>
                 <div className="flex md:gap-5 gap-1 mt-1 text-black cursor-pointer">
-                  <Link href="" className="text-xl">Lotteries</Link>
-                  <span className="text-black opacity-50">|</span>
-                  <Link href="" className="text-xl">Game</Link>
+                  <Link href="/game" className="text-xl">Game</Link>
                   <span className="text-black opacity-50">|</span>
                   <Link href="/ourwinner" className="text-xl">Our Winner</Link>
                   <span className="text-black opacity-50">|</span>
@@ -199,10 +197,7 @@ const Navbar = () => {
                   <DropdownMenuContent className="text-center">
                     <DropdownMenuSeparator />
                     <DropdownMenuItem>
-                      <Link href="">Lotteries</Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem>
-                      <Link href="">Game</Link>
+                      <Link href="/game">Game</Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem>
                       <Link href="/ourwinner">Our Winner</Link>
